@@ -1,0 +1,17 @@
+title: Steven Loucks – Cybersecurity Portfolio
+subtitle: U.S. Navy Veteran | Cybersecurity Student | Lab Builder
+description: >
+  Building a cybersecurity portfolio with labs, certifications, and a personal blog to document my hands-on experience.
+author: Steven Loucks
+email: your-email@example.com
+avatar: assets/icons/navy-veteran.png
+
+baseurl: "" # leave empty if you're using a custom domain like stevenloucks.tech
+url: "https://stevenloucks.tech"
+
+theme: jekyll-theme-prologue
+collections: [sections]
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
