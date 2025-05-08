@@ -1,39 +1,37 @@
 - name: CompTIA Security+
-  icon: /assets/icons/securityplus.png
+  icon: /assets/images/securityplus.png
   link: https://www.credly.com/badges/bfd3f1d4-239e-4ee4-a5db-327cfd884f82/public_url
 
 - name: CompTIA A+
-  icon: /assets/icons/comptia-a-plus.png
+  icon: /assets/images/comptia-a-plus.png
   link: https://www.credly.com/badges/your-a-plus-badge-url
 
+- name: CompTIA Network+
+  icon: /assets/images/comptia-network-plus.png
+  link: https://www.credly.com/badges/your-network-plus-badge-url
+
 - name: CompTIA CIOS
-  icon: /assets/icons/comptia-cios.png
+  icon: /assets/images/comptia-cios.png
   link: https://www.credly.com/badges/b131130a-1f81-4d02-891d-f7e772d02c3d/public_url
 
 - name: CompTIA CSIS
-  icon: /assets/icons/comptia-csis.png
+  icon: /assets/images/comptia-csis.png
   link: https://www.credly.com/badges/d8cd5829-4fda-407f-b1ac-f8cad9eacd8e/public_url
 
-- name: CompTIA Logo
-  icon: /assets/icons/comptia-neutral.png
-  link: ""
-
-- name: ISC2 Certified in Cybersecurity
-  icon: /assets/icons/isc2-cc.png
+- name: ISC2 Certified in Cybersecurity (CC)
+  icon: /assets/images/isc2-cc.png
   link: https://www.credly.com/badges/your-isc2-cc-badge-url
 
-- name: ISC2 Logo
-  icon: /assets/icons/isc2-neutral.png
-  link: ""
-
 - name: LPI Linux Essentials
-  icon: /assets/icons/linux-essentials.png
+  icon: /assets/images/linux-essentials.png
   link: https://www.credly.com/badges/your-linux-essentials-badge-url
 
 - name: U.S. Navy Veteran
-  icon: /assets/icons/navy-veteran.png
-  link: ""
+  icon: /assets/images/navy-veteran.png
 
 - name: WGU Student
-  icon: /assets/icons/wgu-logo.png
-  link: ""
+  icon: /assets/images/wgu-logo.png
+
+- name: LinkedIn
+  icon: /assets/images/linkedin.png
+  link: https://www.linkedin.com/in/steven-loucks/
