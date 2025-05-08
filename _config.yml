@@ -5,7 +5,6 @@ description: >-
 baseurl: "" # leave this blank for GitHub Pages root
 url: "https://sloucks623.github.io"
 
+theme: jekyll-theme-midnight
+title: Steven Loucks
 markdown: kramdown
-theme: jekyll-theme-prologue
-plugins:
-  - jekyll-feed
