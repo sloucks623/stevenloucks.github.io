@@ -14,7 +14,16 @@ title: Steven Loucks
   <h2>About Me</h2>
   <p>I’m a Navy veteran and former construction supervisor, with experience managing logistics and operations at Domino’s. Now transitioning into cybersecurity, I bring discipline, leadership, and a passion for lifelong learning to every challenge I take on.</p>
 </section>
-
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+    {% for cert in site.data.certifications %}
+      <a href="{{ cert.link | default: '#' }}" target="_blank" style="display: inline-block;">
+        <img src="{{ cert.icon }}" alt="{{ cert.name }}" title="{{ cert.name }}" width="100" style="background: white; padding: 5px; border-radius: 10px;">
+      </a>
+    {% endfor %}
+  </div>
+</section>
 <section id="why-cyber">
   <h2>Why Cybersecurity?</h2>
   <p>I chose cybersecurity because it blends critical thinking, technical skills, and real-world impact. I’m fascinated by how systems are protected—and how attackers think. My goal is to use my life experience and new skills to help secure organizations and empower teams.</p>
