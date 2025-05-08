@@ -19,11 +19,11 @@ title: Steven Loucks
   <h2>Why Cybersecurity?</h2>
   <p>I chose cybersecurity because it blends critical thinking, technical skills, and real-world impact. I’m fascinated by how systems are protected—and how attackers think. My goal is to use my life experience and new skills to help secure organizations and empower teams.</p>
 </section>
-
 <section id="projects">
   <h2>Lab Projects</h2>
   <ul>
     <li><a href="https://github.com/sloucks623/active-directory-lab-1.0" target="_blank">Active Directory Lab 1.0</a></li>
+    <li><a href="https://github.com/sloucks623/active-directory-lab-2.0" target="_blank">Active Directory Lab 2.0</a></li>
     <li><a href="https://github.com/sloucks623/lab-soc-automation" target="_blank">SOC Automation Lab</a></li>
     <li><a href="/blog/mitre-attack">MITRE ATT&CK Blog</a></li>
   </ul>
