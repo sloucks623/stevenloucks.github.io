@@ -1,9 +1,3 @@
-title: Steven Loucks
-email: your-email@example.com
-description: >-
-  Cybersecurity student, Navy veteran, and lifelong learner focused on blue team skills and home lab projects.
-baseurl: "" # leave this blank for GitHub Pages root
-url: "https://sloucks623.github.io"
 
 theme: jekyll-theme-midnight
 title: Steven Loucks
