@@ -8,7 +8,7 @@
 
 - name: CompTIA Security+
   icon: /assets/images/securityplus.png
-  link: https://www.credly.com/badges/your-securityplus-badge-url
+  link: https://www.credly.com/badges/bfd3f1d4-239e-4ee4-a5db-327cfd884f82/public_url
 
 - name: CompTIA CIOS
   icon: /assets/images/comptia-cios.png
@@ -16,7 +16,7 @@
 
 - name: CompTIA CSIS
   icon: /assets/images/comptia_csis.png
-  link: https://www.credly.com/badges/8dcd5829-4fda-407f-b1ac-f8cad9eacd8e/public_url
+  link: https://www.credly.com/badges/d8cd5829-4fda-407f-b1ac-f8cad9eacd8e/public_url
 
 - name: CompTIA (Neutral Logo)
   icon: /assets/images/comptia-neutral.png
@@ -26,7 +26,7 @@
   link: https://www.credly.com/badges/b131130a-1f81-4d02-891d-f7e772d02c3d/public_url
 
 - name: ISC2 (Neutral Logo)
-  icon: assets/images/isc2-neutral.png
+  icon: /assets/images/isc2-neutral.png
 
 - name: Linux Essentials
   icon: /assets/images/linux-essentials.png
