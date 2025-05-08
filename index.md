@@ -1,7 +1,3 @@
----
-layout: default
-title: Steven Loucks
----
 
 # Hi, I'm Steven
 
