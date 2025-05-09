@@ -1,0 +1,56 @@
+body {
+  background-color: #1d1f21;
+  color: #ddd;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Green Banner (Hero Section) */
+.hero {
+  background-color: #114422;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #cceacc;
+}
+
+/* Section Wrappers */
+.section {
+  background-color: #2a2c30;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid Layout for Certifications and Labs */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Individual Cards */
+.card {
+  background: #333842;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  text-align: center;
+  border: 1px solid #444;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
