@@ -9,7 +9,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background-color: #0b2e13; /* darker green */
+  background-color: #0b2e13 !important;
   padding: 2.5rem 1rem;
   text-align: center;
 }
@@ -47,17 +47,17 @@ body {
   padding-left: 1.2rem;
   margin-bottom: 1rem;
   display: inline-block;
-  z-index: 1;
+  z-index: 2 !important;
 }
 
 .section h2::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 0.2rem;
+  top: 0.25rem;
   width: 1.2rem;
   height: 1.2rem;
-  background-color: #bfa437; /* muted mustard */
+  background-color: #bfa437 !important; /* muted mustard */
   transform: rotate(45deg);
   z-index: -1;
 }
@@ -119,4 +119,19 @@ body {
   text-decoration: underline;
 }
 
-/* Lab Button*
+/* Lab Button */
+.lab-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2277cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.lab-button:hover {
+  background-color: #115599;
+}
