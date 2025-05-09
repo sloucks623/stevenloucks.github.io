@@ -8,7 +8,6 @@ body {
   padding: 0;
 }
 
-/* Optional overlay for text readability */
 body::before {
   content: "";
   position: fixed;
@@ -20,10 +19,10 @@ body::before {
   z-index: -1;
 }
 
-/* Hero Section */
+/* Hero Section (Fixed Spacing) */
 .hero {
   background-color: #0b2e13 !important;
-  padding: 2.5rem 1rem;
+  padding: 1.5rem 1rem 2rem 1rem;
   text-align: center;
 }
 
@@ -31,13 +30,14 @@ body::before {
   font-family: 'Orbitron', sans-serif;
   font-size: 3.5rem;
   color: #a8ff60;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   letter-spacing: 1px;
 }
 
 .hero p {
   font-size: 1.2rem;
   color: #cceacc;
+  margin-top: 0.3rem;
 }
 
 /* Section Wrapper */
