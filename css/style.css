@@ -1,7 +1,7 @@
 body {
   background: url('/assets/images/background.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #ddd;
+  color: #222;
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -19,7 +19,7 @@ body::before {
   z-index: -1;
 }
 
-/* Hero Section (Fixed Spacing) */
+/* Hero Section */
 .hero {
   background-color: #0b2e13 !important;
   padding: 1.5rem 1rem 2rem 1rem;
@@ -27,11 +27,11 @@ body::before {
 }
 
 .hero h1 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   font-size: 3.5rem;
   color: #a8ff60;
   margin-bottom: 0.3rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .hero p {
@@ -40,90 +40,44 @@ body::before {
   margin-top: 0.3rem;
 }
 
-/* Section Wrapper */
+/* Section Box */
 .section {
-  background-color: #4f90d2;
-  margin: 2rem auto;
+  background-color: #fff;
+  margin: 3rem auto 2rem auto;
   max-width: 900px;
-  padding: 1rem 1.25rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
   border-radius: 14px;
-  border: 1px solid #2a2c30;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   position: relative;
-  color: #fff;
+  color: #222;
 }
 
-/* Triangle Banner Header */
-.section-header {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.triangle-stack {
+/* Angled Orange Banner */
+.section::before {
+  content: "";
   position: absolute;
-  top: -10px;
-  left: -30px;
-  z-index: 5;
-}
-
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 50px solid;
-  position: absolute;
-  transform-origin: center;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
-}
-
-.t1 {
-  border-bottom-color: #ffdd57;
-  transform: rotate(-6deg) translateY(0px);
-  z-index: 4;
-}
-.t2 {
-  border-bottom-color: #ff9800;
-  transform: rotate(-4deg) translateY(6px) translateX(2px);
-  z-index: 3;
-}
-.t3 {
-  border-bottom-color: #bfa437;
-  transform: rotate(-2deg) translateY(12px) translateX(4px);
-  z-index: 2;
-}
-.t4 {
-  border-bottom-color: #000;
-  transform: rotate(0deg) translateY(18px) translateX(6px);
-  z-index: 1;
-}
-
-.section-banner {
-  background-color: #3f8ea3;
-  padding: 1.2rem 1.5rem;
-  margin-left: 2rem;
-  transform: skew(-12deg);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  position: relative;
+  top: -28px;
+  left: -10px;
+  width: 105%;
+  height: 50px;
+  background: linear-gradient(135deg, #ff9800 0%, #ffcc33 60%, #fff 100%);
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
   z-index: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
-.section-banner h2,
-.section-banner p {
-  transform: skew(12deg);
-  margin: 0;
-  color: #fff;
-}
-
-.section-banner h2 {
+/* Section Title on Top of Banner */
+.section h2 {
+  position: relative;
+  z-index: 1;
+  color: #000;
   font-size: 1.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-banner p {
-  font-size: 1rem;
-  color: #eef;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
 }
 
 /* Card Grid */
@@ -132,23 +86,24 @@ body::before {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
   justify-items: center;
+  margin-top: 1rem;
 }
 
 /* Cards */
 .card {
-  background: #3b3f48;
+  background: #f6f6f6;
   padding: 0.75rem 1rem;
   border-radius: 12px;
   width: 100%;
   max-width: 300px;
   text-align: center;
-  border: 1px solid #555;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 200px;
-  color: #fff;
+  color: #000;
 }
 
 /* Header Nav */
