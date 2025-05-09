@@ -8,7 +8,7 @@ body {
   padding: 0;
 }
 
-/* Optional dark overlay for text readability */
+/* Optional overlay for text readability */
 body::before {
   content: "";
   position: fixed;
@@ -16,7 +16,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
@@ -28,11 +28,11 @@ body::before {
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-family: 'Segoe UI Semibold', 'Segoe UI', sans-serif;
-  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  color: #a8ff60;
   margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 .hero p {
@@ -42,17 +42,18 @@ body::before {
 
 /* Section Wrapper */
 .section {
-  background-color: #35383f;
+  background-color: #4f90d2;
   margin: 2rem auto;
   max-width: 900px;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   border-radius: 14px;
-  border: 1px solid #444;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  border: 1px solid #2a2c30;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   position: relative;
+  color: #fff;
 }
 
-/* Triangle Stack Header */
+/* Triangle Banner Header */
 .section-header {
   position: relative;
   margin-bottom: 2rem;
@@ -61,28 +62,28 @@ body::before {
 .triangle-stack {
   position: absolute;
   top: -10px;
-  left: -25px;
+  left: -30px;
   z-index: 5;
 }
 
 .triangle {
   width: 0;
   height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-bottom: 40px solid;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid;
   position: absolute;
   transform-origin: center;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
 .t1 {
-  border-bottom-color: #ffb400;
+  border-bottom-color: #ffdd57;
   transform: rotate(-6deg) translateY(0px);
   z-index: 4;
 }
 .t2 {
-  border-bottom-color: #ffa500;
+  border-bottom-color: #ff9800;
   transform: rotate(-4deg) translateY(6px) translateX(2px);
   z-index: 3;
 }
@@ -92,23 +93,24 @@ body::before {
   z-index: 2;
 }
 .t4 {
-  border-bottom-color: #111;
+  border-bottom-color: #000;
   transform: rotate(0deg) translateY(18px) translateX(6px);
   z-index: 1;
 }
 
 .section-banner {
-  background-color: #2f3236;
-  padding: 1.25rem 1.5rem;
+  background-color: #3f8ea3;
+  padding: 1.2rem 1.5rem;
   margin-left: 2rem;
   transform: skew(-12deg);
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 0;
 }
 
-.section-banner h2, .section-banner p {
+.section-banner h2,
+.section-banner p {
   transform: skew(12deg);
   margin: 0;
   color: #fff;
@@ -121,13 +123,13 @@ body::before {
 
 .section-banner p {
   font-size: 1rem;
-  color: #ccc;
+  color: #eef;
 }
 
-/* Card Grid Layout */
+/* Card Grid */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
   justify-items: center;
 }
@@ -135,17 +137,18 @@ body::before {
 /* Cards */
 .card {
   background: #3b3f48;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 12px;
   width: 100%;
   max-width: 300px;
   text-align: center;
   border: 1px solid #555;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 220px;
+  min-height: 200px;
+  color: #fff;
 }
 
 /* Header Nav */
@@ -192,10 +195,10 @@ body::before {
   border-radius: 8px;
   font-weight: 500;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .lab-button:hover {
   background-color: #115599;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
