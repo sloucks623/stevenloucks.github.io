@@ -40,43 +40,42 @@ body::before {
   margin-top: 0.3rem;
 }
 
-/* Section Box */
+/* Section Panel */
 .section {
   background-color: #fff;
-  margin: 3rem auto 2rem auto;
+  margin: 4rem auto 2.5rem auto;
   max-width: 900px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   border-radius: 14px;
   border: 1px solid #ccc;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   position: relative;
   color: #222;
 }
 
-/* Mustard Banner with Text */
+/* New: Layered Mustard-Orange Banner with Title */
 .section::before {
   content: attr(data-title);
-  display: block;
   position: absolute;
-  top: -28px;
-  left: 0;
+  top: -40px;
+  left: -10px;
   width: 100%;
   height: 50px;
-  background: linear-gradient(135deg, #ff9800 0%, #ffcc33 60%, #fff 100%);
-  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  background: linear-gradient(to right, #000 0%, #b35a00 15%, #ff9800 40%, #ffc107 70%);
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 50px;
+  padding-left: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   z-index: 1;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  color: #000;
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 50px;
-  padding-left: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
 }
 
-/* Hide section <h2> titles visually */
+/* Hide <h2> visually */
 .section h2 {
   position: absolute;
   left: -9999px;
@@ -108,7 +107,7 @@ body::before {
   color: #000;
 }
 
-/* Header Nav */
+/* Nav */
 #header {
   padding: 1rem 2rem;
   display: flex;
