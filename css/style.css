@@ -11,7 +11,8 @@ body {
 /* Hero Section */
 .hero {
   background-color: #0b2e13 !important;
-  padding: 1.5rem 1rem 2rem 1rem;
+  padding: 3rem 1rem 3rem 1rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -33,7 +34,7 @@ body {
 /* Section Panel */
 .section {
   background-color: #fff;
-  margin: 4rem auto 2.5rem auto;
+  margin: 5rem auto 2.5rem auto;
   max-width: 900px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   border-radius: 14px;
@@ -165,7 +166,7 @@ body {
 
   .section {
     padding: 1.5rem 1rem 1rem 1rem;
-    margin: 3rem auto 2rem auto;
+    margin: 4rem auto 2rem auto;
   }
 
   .lab-button {
