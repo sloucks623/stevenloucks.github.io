@@ -166,7 +166,8 @@ body {
 }
 
 
-/* Blog Header - Stacked Diamond Banner Style */
+
+/* Blog Header - Clean Stacked Diamond Banner Style (Enhanced Shadow) */
 .section.blog-accent::before {
   content: attr(data-title);
   position: absolute;
@@ -174,16 +175,13 @@ body {
   left: -16px;
   width: calc(100% + 32px);
   height: 60px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #000 0,
-    #000 12px,
-    #b35a00 12px,
-    #b35a00 24px,
-    #ff9800 24px,
-    #ff9800 36px,
-    #ffc107 36px,
-    #ffc107 48px
+  background: linear-gradient(
+    135deg,
+    #000 0%,
+    #b35a00 25%,
+    #ff9800 50%,
+    #ffc107 75%,
+    #000 100%
   );
   color: #fff;
   font-size: 1.6rem;
@@ -193,11 +191,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
   z-index: 1;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
