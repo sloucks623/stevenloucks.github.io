@@ -7,13 +7,6 @@ body {
   margin: 0;
   padding: 0;
 }
-  background-size: cover;
-  color: #e0e0e0;
-  font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
 
 /* Hero Section */
 .hero {
@@ -122,7 +115,6 @@ body {
   margin: 0;
   text-align: center;
 }
-}
 
 #header nav ul {
   list-style: none;
@@ -217,4 +209,4 @@ body {
     height: 50px;
     padding-left: 1.5rem;
   }
-    }
+}
