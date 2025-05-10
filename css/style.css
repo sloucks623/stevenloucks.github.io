@@ -232,9 +232,10 @@ body {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-/* Cert Badge Hover Effect */
 .cert-badge {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* base shadow always visible */
+}
 }
 
 .cert-badge:hover {
