@@ -198,3 +198,15 @@ body {
   border-top-right-radius: 12px;
   overflow: hidden;
 }
+
+/* Scroll Animation - Section Fade-In */
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
