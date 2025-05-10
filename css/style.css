@@ -232,3 +232,22 @@ body {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+/* Cert Badge Hover Effect */
+.cert-badge {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-badge:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Top Icon Hover - Navy, WGU, LinkedIn */
+.top-icon {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.top-icon:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
