@@ -1,11 +1,14 @@
 body {
-  background: url('/assets/images/background.jpg') no-repeat center center fixed;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/assets/images/background.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #222;
+  color: #e0e0e0;
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+}
 }
 
 /* Hero Section */
