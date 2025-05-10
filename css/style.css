@@ -132,7 +132,7 @@ body {
   text-decoration: underline;
 }
 
-/* Lab Button - Enhanced Shadow */
+/* Lab Button - Stronger Shadow Boost */
 .lab-button {
   display: inline-block;
   margin-top: 1rem;
@@ -143,13 +143,13 @@ body {
   border-radius: 8px;
   font-weight: 500;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35); /* stronger base shadow */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* boosted base shadow */
 }
 
 .lab-button:hover {
   background-color: #115599;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45); /* stronger hover shadow */
-
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6); /* boosted hover shadow */
+}
 }
 
 /* Optional Section Header (not used if ::before is active) */
