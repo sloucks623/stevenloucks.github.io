@@ -42,7 +42,6 @@ body {
   color: #222;
 }
 
-/* Section Header Banner (No Parallelogram) */
 .section::before {
   content: attr(data-title);
   position: absolute;
@@ -55,12 +54,16 @@ body {
   font-size: 1.6rem;
   font-weight: bold;
   line-height: 60px;
-  padding-left: 2rem;
+  padding: 0 2rem 0 3.5rem; /* increased left padding to fix name squeeze */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   z-index: 1;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
 }
 
 /* Hide <h2> visually */
