@@ -199,8 +199,19 @@ body {
   overflow: hidden;
 }
 
-/* Scroll Animation - Section Fade-In */
+/* Section Panel with Scroll Animation */
 .section {
+  background-color: #fff;
+  margin: 4rem auto 2.5rem auto;
+  max-width: 900px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  color: #222;
+
+  /* Scroll animation */
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
