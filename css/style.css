@@ -35,7 +35,7 @@ body {
 .section {
   background-color: #fff;
   margin: 5rem auto 2.5rem auto;
-  max-width: 900px;
+  max-width: 960px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   border-radius: 14px;
   border: 1px solid #ccc;
@@ -52,11 +52,10 @@ body {
   left: -16px;
   width: calc(100% + 32px);
   height: 60px;
-  background: linear-gradient(to right, #000 0%, #b35a00 15%, #ff9800 40%, #ffc107 70%);
+  background: linear-gradient(to right, #000, #b35a00, #ff9800, #ffc107);
   color: #fff;
   font-size: 1.6rem;
   font-weight: bold;
-  line-height: 1.4;
   padding-left: 3rem;
   display: flex;
   align-items: center;
@@ -78,19 +77,19 @@ body {
 /* Card Grid */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   justify-items: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 /* Cards */
 .card {
   background: #f6f6f6;
-  padding: 0.75rem 1rem;
+  padding: 1rem;
   border-radius: 12px;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   text-align: center;
   border: 1px solid #ccc;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
@@ -99,6 +98,20 @@ body {
   justify-content: space-between;
   min-height: 200px;
   color: #000;
+}
+
+/* Individual Certification Badge */
+.cert-badge {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Nav */
@@ -135,7 +148,7 @@ body {
   text-decoration: underline;
 }
 
-/* Lab Button - Stronger Shadow Boost */
+/* Lab Button */
 .lab-button {
   display: inline-block;
   margin-top: 1rem;
@@ -154,7 +167,7 @@ body {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
 }
 
-/* Responsive scaling for large screens */
+/* Responsive Large Screens */
 @media (min-width: 992px) {
   .hero h1 {
     font-size: 2.75rem;
@@ -165,7 +178,7 @@ body {
   }
 
   .section {
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1.75rem;
     margin: 4rem auto 2rem auto;
   }
 
@@ -175,7 +188,7 @@ body {
   }
 }
 
-/* Tablet portrait scaling fix */
+/* Tablet Portrait Tweaks */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;
@@ -187,12 +200,12 @@ body {
   }
 
   .section {
-    padding: 1.2rem 1rem;
+    padding: 1rem;
     margin: 2.5rem auto 2rem auto;
   }
 
   .card-grid {
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .card {
