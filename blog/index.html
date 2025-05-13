@@ -1,0 +1,18 @@
+---
+layout: default
+title: Blog Posts
+---
+
+<h1>Blog Posts</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li style="margin-bottom: 1rem;">
+      <a href="{{ post.url }}" style="font-size: 1.1rem; color: #66ccff; text-decoration: none;">
+        {{ post.title }}
+      </a>
+      <br>
+      <small style="color: #999;">{{ post.date | date: "%B %d, %Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
