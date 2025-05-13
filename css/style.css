@@ -253,3 +253,30 @@ body {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  margin: 1rem auto;
+  max-width: 960px;
+  padding: 1rem;
+}
+
+.cert-grid a {
+  display: block;
+}
+
+.cert-grid img {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
