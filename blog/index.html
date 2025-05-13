@@ -5,14 +5,25 @@ title: Blog Posts
 
 <h1>Blog Posts</h1>
 
-<ul>
+<!-- Manually pinned welcome post -->
+<div style="margin-bottom: 2rem; padding: 1rem; background-color: #f6f6f6; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2);">
+  <a href="/2025/05/01/welcome-to-my-blog.html" style="font-size: 1.25rem; color: #2277cc; text-decoration: none; font-weight: bold;">
+    Welcome to My Blog
+  </a>
+  <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: #555;">Intro post for new visitors — what this blog is and what to expect.</p>
+</div>
+
+<!-- Auto-list remaining posts (excluding the welcome post) -->
+<ul style="list-style: none; padding-left: 0;">
   {% for post in site.posts %}
-    <li style="margin-bottom: 1rem;">
-      <a href="{{ post.url }}" style="font-size: 1.1rem; color: #66ccff; text-decoration: none;">
-        {{ post.title }}
-      </a>
-      <br>
-      <small style="color: #999;">{{ post.date | date: "%B %d, %Y" }}</small>
-    </li>
+    {% unless post.url contains "welcome-to-my-blog" %}
+      <li style="margin-bottom: 1.5rem;">
+        <a href="{{ post.url }}" style="font-size: 1.1rem; color: #66ccff; text-decoration: none;">
+          {{ post.title }}
+        </a>
+        <br>
+        <small style="color: #999;">{{ post.date | date: "%B %d, %Y" }}</small>
+      </li>
+    {% endunless %}
   {% endfor %}
 </ul>
