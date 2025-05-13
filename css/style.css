@@ -258,3 +258,20 @@ body {
   transform: translateY(-2px);
   text-decoration: none;
 }
+.blog-button {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-button:hover {
+  background-color: #cc7a00;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
