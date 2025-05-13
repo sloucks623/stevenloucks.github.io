@@ -243,3 +243,18 @@ body {
     padding-left: 1.5rem;
   }
   }
+.section h2 a {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #ff9800;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.section h2 a:hover {
+  background-color: #cc7a00;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
