@@ -133,6 +133,34 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Lab Grid Layout - New Addition */
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  justify-content: center;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.lab-button {
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  background-color: #2277cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lab-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
 /* Nav */
 #header {
   padding: 1rem 2rem;
@@ -165,25 +193,6 @@ body {
 
 #header nav ul li a:hover {
   text-decoration: underline;
-}
-
-/* Lab Button */
-.lab-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #2277cc;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-}
-
-.lab-button:hover {
-  background-color: #115599;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
 }
 
 /* Responsive Large Screens */
@@ -242,7 +251,8 @@ body {
     height: 50px;
     padding-left: 1.5rem;
   }
-  }
+}
+
 .section h2 a {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -258,6 +268,7 @@ body {
   transform: translateY(-2px);
   text-decoration: none;
 }
+
 .blog-button {
   display: inline-block;
   margin-top: 1.25rem;
