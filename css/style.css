@@ -316,3 +316,6 @@ body {
       0 0 35px #33ccff;
   }
 }
+.site-title {
+  display: none;
+}
