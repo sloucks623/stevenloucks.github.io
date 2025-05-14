@@ -10,8 +10,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background-color: #0b2e13 !important;
-  padding: 3rem 1rem 3rem 1rem;
+  background: transparent !important;
+  padding: 3rem 1rem;
   margin-bottom: 3rem;
   text-align: center;
 }
