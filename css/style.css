@@ -286,3 +286,19 @@ body {
   background-color: #cc7a00;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 4px #00ffff,
+      0 0 8px #00ffff,
+      0 0 12px #1bdfff,
+      0 0 16px #33ccff;
+  }
+  100% {
+    text-shadow:
+      0 0 12px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #1bdfff,
+      0 0 40px #33ccff;
+  }
+}
