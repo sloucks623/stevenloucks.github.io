@@ -19,16 +19,16 @@ body {
 .hero h1 {
   font-family: 'Rajdhani', sans-serif;
   font-size: 3.5rem;
-  color: #00ffff; /* brighter cyan */
+  color: #00bfff; /* deeper electric blue */
   margin-bottom: 0.3rem;
   letter-spacing: 0.5px;
   text-align: center;
   text-shadow:
-    0 0 8px #00ffff,
-    0 0 12px #00ffff,
-    0 0 16px #1bdfff,
-    0 0 24px #33ccff;
-  animation: neonGlow 2.5s ease-in-out infinite alternate;
+    0 0 5px #00bfff,
+    0 0 10px #00bfff,
+    0 0 20px #1ecbff,
+    0 0 30px #33ccff;
+  animation: neonGlow 2.2s ease-in-out infinite alternate;
 }
 
 }
