@@ -17,12 +17,14 @@ body {
 }
 
 .hero h1 {
- font-family: 'Rajdhani', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 3.5rem;
-  color: #a8ff60;
+  color: #33ccff;
   margin-bottom: 0.3rem;
   letter-spacing: 0.5px;
   text-align: center;
+}
+
 }
 
 .hero p {
