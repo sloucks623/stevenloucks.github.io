@@ -302,3 +302,17 @@ body {
       0 0 40px #33ccff;
   }
 }
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 4px #007acc,
+      0 0 10px #0099ff,
+      0 0 16px #33ccff;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #00bfff,
+      0 0 20px #1ecbff,
+      0 0 35px #33ccff;
+  }
+}
