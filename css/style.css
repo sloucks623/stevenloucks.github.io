@@ -52,34 +52,48 @@ body {
   color: #222;
 }
 
-/* === Banner Stack Header (Updated for Final Spec) === */
+/* === Banner Stack Header === */
 .section::before {
   content: attr(data-title);
   display: block;
   position: relative;
   width: 100%;
-  max-width: 100%;
   padding: 0.6em 1.2em;
   font-family: Orbitron, sans-serif;
   font-size: 1.4em;
   font-weight: bold;
   color: black;
-  background: linear-gradient(to right, #8b4513, #d2691e, #ffbf00, #fdf6e3);
-  clip-path: polygon(
-    0 0,                      /* Left top */
-    85% 0,                    /* Right top in line */
-    100% 50%,                 /* Right point */
-    85% 100%,                 /* Right bottom in line */
-    0 100%,                   /* Left bottom */
-    5% 50%                    /* Left point in */
-  );
-  margin-top: -0.8em;
-  margin-bottom: 0.4em;
-  margin-left: -0.5em;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  background: linear-gradient(to right, #1a1a1a, #d2691e, #ffbf00);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-bottom: 0.3em;
+  margin-top: -0.4em;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  z-index: 5;
+  z-index: 2;
+}
+
+.section {
+  position: relative;
+  margin: 2em auto;
+  padding: 1.2em;
+  background: white;
+  border-radius: 10px;
+  max-width: 850px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 0.6em;
+  height: 100%;
+  background: #000;
+  transform: skewY(-10deg);
+  z-index: 1;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 }
 /* Hide <h2> visually */
 .section h2 {
