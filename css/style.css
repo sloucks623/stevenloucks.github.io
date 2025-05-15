@@ -19,7 +19,7 @@ body {
 .hero h1 {
   font-family: 'Rajdhani', sans-serif;
   font-size: 3.5rem;
-  color: #00bfff; /* deeper electric blue */
+  color: #00bfff;
   margin-bottom: 0.3rem;
   letter-spacing: 0.5px;
   text-align: center;
@@ -49,8 +49,6 @@ body {
   position: relative;
   color: #222;
 }
-
-/* ---- REMOVED .section::before ---- */
 
 /* Hide <h2> visually */
 .section h2 {
@@ -125,132 +123,158 @@ body {
   padding: 12px 24px;
   text-align: center;
   background-color: #2277cc;
-  color: #fff
-/* ---- BEGIN SECTION HEADER FLAG STACK ---- */
-
-.section-header-stack {
-  position: relative;
-  margin-bottom: 2.3rem;
-  height: 62px;
-  display: flex;
-  align-items: flex-start;
-  z-index: 2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.section-header-banner {
-  position: relative;
+.lab-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Nav */
+#header {
+  padding: 1rem 2rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  min-width: 340px;
-  max-width: 88vw;
-  height: 56px;
-  background: linear-gradient(90deg, #ffe066 80%, #e88d2a 100%);
-  box-shadow: 0 4px 18px -2px rgba(0,0,0,0.21), 0 1px 0 #0003;
-  border-radius: 18px 40px 12px 8px / 24px 38px 8px 8px;
-  padding-left: 82px; /* leaves room for flag stack */
-  margin-bottom: 0.6rem;
+  background: transparent;
 }
 
-@media (max-width: 600px) {
-  .section-header-stack {
-    height: 48px;
-  }
-  .section-header-banner {
-    min-width: 90vw;
-    font-size: 1.09rem;
-    padding-left: 60px;
-    height: 40px;
-  }
+#header h1 {
+  font-size: 2rem;
+  color: #f0f0f0;
+  margin: 0;
+  text-align: center;
 }
 
-/* --- Triangle (Flag) Stack --- */
-.flag-stack {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 80px;
-  height: 62px;
-  pointer-events: none;
-  z-index: 10;
+#header nav ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
-.flag-layer {
-  position: absolute;
-  left: 0;
-  width: 60px;
-  height: 36px;
-  border-radius: 10px 8px 16px 2px / 16px 8px 18px 4px;
-  box-shadow: 0 4px 14px 0 #0003;
-  transform: skew(-18deg, -8deg) rotate(-9deg);
-  opacity: 0.92;
+#header nav ul li a {
+  color: #66ccff;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.flag-layer.layer1 { /* Bottom - Black */
-  top: 14px;
-  background: #222324;
-  z-index: 1;
-  box-shadow: 0 8px 28px 0 #0008;
-}
-.flag-layer.layer2 { /* Orange */
-  top: 8px;
-  left: 10px;
-  background: #e88d2a;
-  z-index: 2;
-  opacity: 0.96;
-  box-shadow: 0 5px 22px 0 #b74e0899;
-}
-.flag-layer.layer3 { /* Mustard */
-  top: 0px;
-  left: 22px;
-  background: #ffe066;
-  z-index: 3;
-  box-shadow: 0 4px 20px 0 #f6e06b90;
-}
-.flag-layer.layer4 { /* White accent */
-  top: 3px;
-  left: 34px;
-  background: #fff;
-  z-index: 4;
-  opacity: 0.92;
-  box-shadow: 0 4px 14px 0 #fff2;
+#header nav ul li a:hover {
+  text-decoration: underline;
 }
 
-.section-header-title {
-  position: absolute;
-  left: 92px;
-  top: 0;
-  font-size: 1.38rem;
-  font-weight: bold;
-  color: #222324;
-  letter-spacing: 0.04em;
-  padding: 12px 28px 10px 0;
-  z-index: 20;
-  text-shadow:
-    1px 2px 12px #0004,
-    0 1px 0 #fff6,
-    0 0px 4px #ffe06633;
-  transition: text-shadow 0.2s, color 0.2s;
-  pointer-events: auto;
-  user-select: text;
-}
+/* Responsive Large Screens */
+@media (min-width: 992px) {
+  .hero h1 {
+    font-size: 2.75rem;
+  }
 
-@media (max-width: 600px) {
-  .section-header-title {
-    font-size: 1.05rem;
-    left: 56px;
-    padding: 7px 14px 7px 0;
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 1.75rem;
+    margin: 4rem auto 2rem auto;
+  }
+
+  .lab-button {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
   }
 }
 
-.section-header-banner:hover .section-header-title {
-  color: #b74e08;
-  text-shadow: 2px 4px 20px #0005, 0 1px 0 #ffe066;
+/* Tablet Portrait Tweaks */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .section {
+    padding: 1rem;
+    margin: 2.5rem auto 2rem auto;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+
+  .card {
+    max-width: 90%;
+    padding: 0.75rem;
+  }
+
+  .lab-button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
-/* ---- END SECTION HEADER FLAG STACK ---- */
+.section h2 a {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #ff9800;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.section h2 a:hover {
+  background-color: #cc7a00;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.blog-button {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-button:hover {
+  background-color: #cc7a00;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 4px #00ffff,
+      0 0 8px #00ffff,
+      0 0 12px #1bdfff,
+      0 0 16px #33ccff;
+  }
+  100% {
+    text-shadow:
+      0 0 12px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #1bdfff,
+      0 0 40px #33ccff;
+  }
+}
+.site-title {
+  display: none;
+}
+
 /* ---- BEGIN SECTION HEADER FLAG STACK ---- */
 
 .section-header-stack {
