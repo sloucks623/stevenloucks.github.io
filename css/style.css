@@ -126,3 +126,128 @@ body {
   text-align: center;
   background-color: #2277cc;
   color: #fff
+/* ---- BEGIN SECTION HEADER FLAG STACK ---- */
+
+.section-header-stack {
+  position: relative;
+  margin-bottom: 2.3rem;
+  height: 62px;
+  display: flex;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.section-header-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 340px;
+  max-width: 88vw;
+  height: 56px;
+  background: linear-gradient(90deg, #ffe066 80%, #e88d2a 100%);
+  box-shadow: 0 4px 18px -2px rgba(0,0,0,0.21), 0 1px 0 #0003;
+  border-radius: 18px 40px 12px 8px / 24px 38px 8px 8px;
+  padding-left: 82px; /* leaves room for flag stack */
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 600px) {
+  .section-header-stack {
+    height: 48px;
+  }
+  .section-header-banner {
+    min-width: 90vw;
+    font-size: 1.09rem;
+    padding-left: 60px;
+    height: 40px;
+  }
+}
+
+/* --- Triangle (Flag) Stack --- */
+.flag-stack {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 62px;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.flag-layer {
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 36px;
+  border-radius: 10px 8px 16px 2px / 16px 8px 18px 4px;
+  box-shadow: 0 4px 14px 0 #0003;
+  transform: skew(-18deg, -8deg) rotate(-9deg);
+  opacity: 0.92;
+}
+
+.flag-layer.layer1 { /* Bottom - Black */
+  top: 14px;
+  background: #222324;
+  z-index: 1;
+  box-shadow: 0 8px 28px 0 #0008;
+}
+.flag-layer.layer2 { /* Orange */
+  top: 8px;
+  left: 10px;
+  background: #e88d2a;
+  z-index: 2;
+  opacity: 0.96;
+  box-shadow: 0 5px 22px 0 #b74e0899;
+}
+.flag-layer.layer3 { /* Mustard */
+  top: 0px;
+  left: 22px;
+  background: #ffe066;
+  z-index: 3;
+  box-shadow: 0 4px 20px 0 #f6e06b90;
+}
+.flag-layer.layer4 { /* White accent */
+  top: 3px;
+  left: 34px;
+  background: #fff;
+  z-index: 4;
+  opacity: 0.92;
+  box-shadow: 0 4px 14px 0 #fff2;
+}
+
+.section-header-title {
+  position: absolute;
+  left: 92px;
+  top: 0;
+  font-size: 1.38rem;
+  font-weight: bold;
+  color: #222324;
+  letter-spacing: 0.04em;
+  padding: 12px 28px 10px 0;
+  z-index: 20;
+  text-shadow:
+    1px 2px 12px #0004,
+    0 1px 0 #fff6,
+    0 0px 4px #ffe06633;
+  transition: text-shadow 0.2s, color 0.2s;
+  pointer-events: auto;
+  user-select: text;
+}
+
+@media (max-width: 600px) {
+  .section-header-title {
+    font-size: 1.05rem;
+    left: 56px;
+    padding: 7px 14px 7px 0;
+  }
+}
+
+.section-header-banner:hover .section-header-title {
+  color: #b74e08;
+  text-shadow: 2px 4px 20px #0005, 0 1px 0 #ffe066;
+}
+
+/* ---- END SECTION HEADER FLAG STACK ---- */
