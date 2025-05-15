@@ -52,30 +52,35 @@ body {
   color: #222;
 }
 
-/* Section Banner Header */
+/* === Banner Stack Header (Updated for Final Spec) === */
 .section::before {
   content: attr(data-title);
-  position: absolute;
-  top: -48px;
-  left: -16px;
-  width: calc(100% + 32px);
-  height: 60px;
-  background: linear-gradient(to right, #000, #b35a00, #ff9800, #ffc107);
-  color: #fff;
-  font-size: 1.6rem;
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.6em 1.2em;
+  font-family: Orbitron, sans-serif;
+  font-size: 1.4em;
   font-weight: bold;
-  padding-left: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  overflow: hidden;
+  color: black;
+  background: linear-gradient(to right, #8b4513, #d2691e, #ffbf00, #fdf6e3);
+  clip-path: polygon(
+    0 0,                      /* Left top */
+    85% 0,                    /* Right top in line */
+    100% 50%,                 /* Right point */
+    85% 100%,                 /* Right bottom in line */
+    0 100%,                   /* Left bottom */
+    5% 50%                    /* Left point in */
+  );
+  margin-top: -0.8em;
+  margin-bottom: 0.4em;
+  margin-left: -0.5em;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 5;
 }
-
 /* Hide <h2> visually */
 .section h2 {
   position: absolute;
