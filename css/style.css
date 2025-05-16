@@ -375,7 +375,7 @@ body {
 .flag-stack {
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 30px;
   width: 80px;
   height: 62px;
   pointer-events: none;
