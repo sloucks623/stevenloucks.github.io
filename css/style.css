@@ -376,14 +376,16 @@ body {
 .flag-stack {
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 20px;  /* <- changed from 30px to 20px */
   width: 80px;
   height: 62px;
   pointer-events: none;
   z-index: 10;
+  filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.7)) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5));
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.7)) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5));
 }
 
 .flag-layer {
