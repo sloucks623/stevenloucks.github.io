@@ -1,197 +1,465 @@
----
-layout: default
-title: Steven Loucks – Cybersecurity Portfolio
----
+/* Base Styles */
+body {
+  background: linear-gradient(to bottom, #2c2c2c, #4a4a4a);
+  color: #e0e0e0;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-<!-- radjhaani Font -->
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+/* Hero Section */
+.hero {
+  background: transparent !important;
+  padding: 3rem 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
 
-<div class="hero">
-  <h1>Steven Loucks</h1>
-  <p>Navy Veteran | Business Owner | Cybersecurity Student</p>
-  <p style="font-size: 1.1rem; color: #ccc;">
-    I’m a cybersecurity student at WGU building real-world labs, certifications, and documentation to launch a second career in cyber defense.
-  </p>
-  <div style="margin-top: 1.5rem; background-color: white; border-radius: 10px; padding: 0.75rem 1.5rem; display: flex; justify-content: center; align-items: center; gap: 2rem; max-width: 350px; margin: 0 auto;">
-    <a href="/assets/images/navy-veteran.png" target="_blank">
-      <img src="/assets/images/navy-veteran.png" alt="Navy Veteran" style="height: 60px;">
-    </a>
-    <a href="https://www.linkedin.com/in/steven-loucks-846b65270" target="_blank">
-      <img src="/assets/images/linkedin-icon.png" alt="LinkedIn" style="height: 50px;">
-    </a>
-    <img src="/assets/images/wgu-logo.png" alt="WGU Logo" style="height: 60px;">
-  </div>
-</div>
+.hero h1 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3.5rem;
+  color: #00bfff; /* deeper electric blue */
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-shadow:
+    0 0 5px #00bfff,
+    0 0 10px #00bfff,
+    0 0 20px #1ecbff,
+    0 0 30px #33ccff;
+  animation: neonGlow 2.2s ease-in-out infinite alternate;
+}
 
-<nav style="text-align: center; margin: 2rem 0;">
-  <a href="#certs" style="margin-right: 1rem;">Certifications</a>
-  <a href="#labs" style="margin-right: 1rem;">Labs</a>
-  <a href="#contact">Contact</a>
-</nav>
+}
 
-<!-- About Section -->
-<div class="section" data-title="My Journey into Cybersecurity">
-  <p>
-    After 20+ years operating tower cranes, managing Domino’s stores, and running a high-demand luxury auto transport business, I’ve transitioned into cybersecurity.
-    My work has always required precision, responsibility, and problem-solving — the same mindset I now apply to digital systems and infosec.
-  </p>
-  <p>
-    I’m currently earning my B.S. in Cybersecurity and Information Assurance at WGU, and building out professional lab environments and documentation to prove what I can do.
-  </p>
-</div>
+.hero p {
+  font-size: 1.2rem;
+  color: #cceacc;
+  margin-top: 0.3rem;
+}
 
-<!-- Why Cyber -->
-<div class="section" data-title="Why Cybersecurity Now?">
-  <p>
-    This career shift isn’t random — it’s the next evolution. For years, I operated tower cranes in high-risk environments where attention to detail meant the difference between safety and catastrophe. Every operation demanded total focus, precision under pressure, and the ability to adapt in real time — hour after hour, day after day.
-  </p>
-  <p>
-    Now, I’m applying that same mindset to cybersecurity. Through hands-on labs, certifications, and degree work at WGU, I’m building the technical foundation to contribute in SOC operations, automation, and threat detection. This isn’t just a new career — it’s a continuation of how I’ve always worked: calm under pressure, committed to doing the job right, and never afraid to take on complex challenges.
-  </p>
-</div>
+/* Section Panel */
+.section {
+  background-color: #fff;
+  margin: 5rem auto 2.5rem auto;
+  max-width: 960px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  color: #222;
+}
 
-<!-- Certifications -->
-<div class="section-header-stack">
-  <div class="section-header-banner">
-    <div class="flag-stack">
-      <div class="flag-layer layer1"></div>
-      <div class="flag-layer layer2"></div>
-      <div class="flag-layer layer3"></div>
-      <div class="flag-layer layer4"></div>
-    </div>
-    <div class="section-header-title">Certifications</div>
-  </div>
-</div>
-<div style="background: linear-gradient(to right, #222, #ffe066); padding: 0.65rem 1rem; border-radius: 10px; margin-top: -0.4rem; margin-bottom: 0.9rem; box-shadow: 0 4px 12px rgba(0,0,0,0.4); max-width: 950px; width: 100%; margin-left: auto; margin-right: auto;">
-  <p style="margin: 0; text-align: center; font-style: italic; font-size: 0.95rem; color: #f5f5f5;">
-    Click a badge to verify on Credly. This section links directly to individual credentials.
-  </p>
-</div>
-<div class="cert-grid" id="certs" style="margin-top: -0.6rem;">
-  <a href="https://www.credly.com/badges/b131130a-1f81-4d02-891d-f7e772d02c3d/public_url" target="_blank">
-    <img src="/assets/images/comptia-a-plus.png" alt="CompTIA A+" class="cert-badge" style="height: 60px;">
-  </a>
-  <a href="https://www.credly.com/badges/d8cd5829-4fda-407f-b1ac-f8cad9eacd8e/public_url" target="_blank">
-    <img src="/assets/images/comptia-network-plus.png" alt="CompTIA Network+" class="cert-badge" style="height: 60px;">
-  </a>
-  <a href="https://www.credly.com/badges/bfd3f1d4-239e-4ee4-a5db-327cfd884f82/public_url" target="_blank">
-    <img src="/assets/images/securityplus.png" alt="CompTIA Security+" class="cert-badge" style="height: 60px;">
-  </a>
-  <a href="https://www.credly.com/badges/b0bf80d4-ce82-409f-9fbf-ce566e35f719/public_url" target="_blank">
-    <img src="/assets/images/linux-essentials.png" alt="Linux Essentials" class="cert-badge" style="height: 60px;">
-  </a>
-  <a href="https://www.credly.com/badges/b286fc02-58d9-41ad-8caa-0687e67fd53d/public_url" target="_blank">
-    <img src="/assets/images/isc2-cc.png" alt="ISC2 Certified in Cybersecurity" class="cert-badge" style="height: 60px;">
-  </a>
-  <a href="https://www.credly.com/badges/796b7e03-c9f8-41f0-a4f6-a30bd534a5a3/public_url" target="_blank">
-    <img src="/assets/images/comptia-csis.png" alt="CompTIA CSIS" class="cert-badge" style="height: 60px;">
-  </a>
-  <a href="https://www.credly.com/badges/b286fc02-58d9-41ad-8caa-0687e67fd53d/public_url" target="_blank">
-    <img src="/assets/images/comptia-cios.png" alt="CompTIA CIOS" class="cert-badge" style="height: 60px;">
-  </a>
-</div>
+/* Section Banner Header */
+.section::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -48px;
+  left: -16px;
+  width: calc(100% + 32px);
+  height: 60px;
+  background: linear-gradient(to right, #000, #b35a00, #ff9800, #ffc107);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+}
 
-<!-- Lab Projects -->
-<div class="section-header-stack">
-  <div class="section-header-banner">
-    <div class="flag-stack">
-      <div class="flag-layer layer1"></div>
-      <div class="flag-layer layer2"></div>
-      <div class="flag-layer layer3"></div>
-      <div class="flag-layer layer4"></div>
-    </div>
-    <div class="section-header-title">Lab Projects</div>
-  </div>
-</div>
-<div style="background: linear-gradient(to right, #222, #ffe066); padding: 0.65rem 1rem; border-radius: 10px; margin-top: -0.4rem; margin-bottom: 0.9rem; box-shadow: 0 4px 12px rgba(0,0,0,0.4); max-width: 950px; width: 100%; margin-left: auto; margin-right: auto;">
-  <p style="margin: 0; text-align: center; font-style: italic; font-size: 0.95rem; color: #f5f5f5;">
-    Each lab links to its GitHub repository with documentation and screenshots.
-  </p>
-</div>
-<div class="section" id="labs">
-  <div class="card-grid">
-    <div class="card">
-      <h3>SOC Automation Lab</h3>
-      <p>Automating alert triage using Shuffle, Elastic Stack, and Slack integrations.</p>
-      <a class="lab-button" href="https://github.com/sloucks623/lab-soc-automation" target="_blank">View Lab</a>
-    </div>
-    <div class="card">
-      <h3>Active Directory Lab 1.0</h3>
-      <p>Set up a basic AD domain controller with DHCP, DNS, OUs, and users.</p>
-      <a class="lab-button" href="https://github.com/sloucks623/lab-active-directory-1.0" target="_blank">View Lab</a>
-    </div>
-    <div class="card">
-      <h3>Active Directory Lab 2.0</h3>
-      <p>Expanded AD with GPOs, PowerShell automation, and segmentation.</p>
-      <a class="lab-button" href="https://github.com/sloucks623/lab-active-directory-2.0" target="_blank">View Lab</a>
-    </div>
-    <div class="card">
-      <h3>Detection Lab 1.0</h3>
-      <p>Standalone detection-focused environment with EDR, IDS, logging pipeline, and MITRE ATT&CK mapping.</p>
-      <a class="lab-button" href="https://github.com/sloucks623/lab-detection-1.0" target="_blank">View Lab</a>
-    </div>
-  </div>
-</div>
+/* Hide <h2> visually */
+.section h2 {
+  position: absolute;
+  left: -9999px;
+}
 
-<!-- Blog -->
-<div class="section-header-stack">
-  <div class="section-header-banner">
-    <div class="flag-stack">
-      <div class="flag-layer layer1"></div>
-      <div class="flag-layer layer2"></div>
-      <div class="flag-layer layer3"></div>
-      <div class="flag-layer layer4"></div>
-    </div>
-    <div class="section-header-title">Blog</div>
-  </div>
-</div>
-<div style="background: linear-gradient(to right, #222, #ffe066); padding: 0.65rem 1rem; border-radius: 10px; margin-top: -0.4rem; margin-bottom: 0.9rem; box-shadow: 0 4px 12px rgba(0,0,0,0.4); max-width: 950px; width: 100%; margin-left: auto; margin-right: auto;">
-  <p style="margin: 0; text-align: center; font-style: italic; font-size: 0.95rem; color: #f5f5f5;">
-    Writeups and reflections on tools, techniques, and lessons learned in labs.
-  </p>
-</div>
-<div class="section" id="blog">
-  <a href="/blog/index.html" class="lab-button">View Posts</a>
-</div>
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 1.5rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-<!-- Contact -->
-<div class="section-header-stack">
-  <div class="section-header-banner">
-    <div class="flag-stack">
-      <div class="flag-layer layer1"></div>
-      <div class="flag-layer layer2"></div>
-      <div class="flag-layer layer3"></div>
-      <div class="flag-layer layer4"></div>
-    </div>
-    <div class="section-header-title">Contact</div>
-  </div>
-</div>
-<div style="background: linear-gradient(to right, #222, #ffe066); padding: 0.65rem 1rem; border-radius: 10px; margin-top: -0.4rem; margin-bottom: 0.9rem; box-shadow: 0 4px 12px rgba(0,0,0,0.4); max-width: 950px; width: 100%; margin-left: auto; margin-right: auto;">
-  <p style="margin: 0; text-align: center; font-style: italic; font-size: 0.95rem; color: #f5f5f5;">
-    Want to get in touch? You can reach me via LinkedIn or email.
-  </p>
-</div>
-<div class="section" id="contact">
-  <a href="https://www.linkedin.com/in/steven-loucks-846b65270" target="_blank">
-    <img src="/assets/images/linkedin-banner.png" alt="LinkedIn Banner" class="linkedin-banner" style="height: 50px; display: block; margin: 1rem auto;">
-  </a>
-</div>
+/* Cards */
+.card {
+  background: #f6f6f6;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  color: #000;
+}
 
-<footer style="text-align: center; margin: 3rem auto; font-size: 0.9rem; color: #888;">
-  © 2025 Steven Loucks — Built with GitHub Pages & Midnight Theme
-</footer>
+/* Certification Grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 960px;
+  padding: 1rem;
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-<script>
-  const sections = document.querySelectorAll('.section');
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    sections.forEach(section => {
-      const boxTop = section.getBoundingClientRect().top;
-      if (boxTop < triggerBottom) {
-        section.classList.add('reveal');
-      }
-    });
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-</script>
+.cert-grid a {
+  display: block;
+}
+
+.cert-grid img {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.lab-button {
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  background-color: #2277cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lab-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Nav */
+#header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+#header h1 {
+  font-size: 2rem;
+  color: #f0f0f0;
+  margin: 0;
+  text-align: center;
+}
+
+#header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+#header nav ul li a {
+  color: #66ccff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Large Screens */
+@media (min-width: 992px) {
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 1.75rem;
+    margin: 4rem auto 2rem auto;
+  }
+
+  .lab-button {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
+  }
+}
+
+/* Tablet Portrait Tweaks */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .section {
+    padding: 1rem;
+    margin: 2.5rem auto 2rem auto;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+
+  .card {
+    max-width: 90%;
+    padding: 0.75rem;
+  }
+
+  .lab-button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .section::before {
+    font-size: 1.3rem;
+    height: 50px;
+    padding-left: 1.5rem;
+  }
+}
+
+.section h2 a {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #ff9800;
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.section h2 a:hover {
+  background-color: #cc7a00;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.blog-button {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-button:hover {
+  background-color: #cc7a00;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 4px #00ffff,
+      0 0 8px #00ffff,
+      0 0 12px #1bdfff,
+      0 0 16px #33ccff;
+  }
+  100% {
+    text-shadow:
+      0 0 12px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #1bdfff,
+      0 0 40px #33ccff;
+  }
+}
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 4px #007acc,
+      0 0 10px #0099ff,
+      0 0 16px #33ccff;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #00bfff,
+      0 0 20px #1ecbff,
+      0 0 35px #33ccff;
+  }
+}
+.site-title {
+  display: none;
+}
+
+/* === Section Header Flag Stack === */
+
+.section-header-stack {
+  position: relative;
+  margin-bottom: 0.3rem;
+  height: auto;             /* allow triangle stack to overflow */
+  display: flex;
+  align-items: flex-start;
+  overflow: visible;
+  z-index: 2;
+}
+.section-header-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 950px;
+  min-width: 260px;
+  height: 56px;
+  background: linear-gradient(90deg, #ffe066 80%, #e88d2a 100%);
+  box-shadow: 0 4px 18px -2px rgba(0,0,0,0.21), 0 1px 0 #0003;
+  border-radius: 18px 40px 12px 8px / 24px 38px 8px 8px;
+  padding-left: 82px;
+  margin-bottom: 0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+
+.section-header-banner.top-banner {
+  margin-top: 0.5rem;
+  margin-bottom: 2.6rem;
+  width: 95vw;
+  max-width: 1050px;
+  min-width: 260px;
+}
+
+@media (max-width: 600px) {
+  .section-header-stack {
+    height: 48px;
+  }
+  .section-header-banner,
+  .section-header-banner.top-banner {
+    min-width: 90vw;
+    width: 97vw;
+    font-size: 1.09rem;
+    padding-left: 60px;
+    height: 40px;
+  }
+}
+
+/* === Triangle Flag Layers === */
+
+.flag-stack {
+  position: absolute;
+  left: 0;
+  top: 20px;  /* <- changed from 30px to 20px */
+  width: 80px;
+  height: 62px;
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.7)) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.7)) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+.flag-layer {
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 36px;
+  border-radius: 10px 8px 16px 2px / 16px 8px 18px 4px;
+  box-shadow: 0 4px 14px 0 #0003;
+  transform: skew(-18deg, -8deg) rotate(-9deg);
+  opacity: 0.92;
+}
+
+.flag-layer.layer1 {
+  top: 14px;
+  background: #222324;
+  z-index: 1;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.1), 0 8px 28px 0 #0008;
+  border: 1px solid #ffe066;
+}
+.flag-layer.layer2 {
+  top: 8px;
+  left: 10px;
+  background: #e88d2a;
+  z-index: 2;
+  opacity: 0.96;
+  box-shadow: 0 5px 22px 0 #b74e0899;
+}
+.flag-layer.layer3 {
+  top: 0px;
+  left: 22px;
+  background: #ffe066;
+  z-index: 3;
+  box-shadow: 0 4px 20px 0 #f6e06b90;
+}
+.flag-layer.layer4 {
+  top: 3px;
+  left: 34px;
+  background: #fff;
+  z-index: 4;
+  opacity: 0.92;
+  box-shadow: 0 4px 14px 0 #fff2;
+}
+
+/* === Section Title Inside Banner === */
+
+.section-header-title {
+  position: absolute;
+  left: 92px;
+  top: 0;
+  font-size: 1.38rem;
+  font-weight: bold;
+  color: #222324;
+  letter-spacing: 0.04em;
+  padding: 12px 28px 10px 0;
+  z-index: 20;
+  text-shadow:
+    1px 2px 12px #0004,
+    0 1px 0 #fff6,
+    0 0px 4px #ffe06633;
+  transition: text-shadow 0.2s, color 0.2s;
+  pointer-events: auto;
+  user-select: text;
+}
+
+@media (max-width: 600px) {
+  .section-header-title {
+    font-size: 1.05rem;
+    left: 56px;
+    padding: 7px 14px 7px 0;
+  }
+}
+
+.section-header-banner:hover .section-header-title {
+  color: #b74e08;
+  text-shadow: 2px 4px 20px #0005, 0 1px 0 #ffe066;
+  }
