@@ -34,6 +34,32 @@ Planned programs include:
 
 ---
 
+## Professional Development
+
+![status](https://img.shields.io/badge/Status-In_Progress-yellow)
+![focus](https://img.shields.io/badge/Focus-Cybersecurity_Training-blue)
+![source](https://img.shields.io/badge/Platform-Forage-informational)
+
+<details>
+<summary>Click to view planned virtual programs</summary>
+
+I am actively expanding my cybersecurity knowledge through structured virtual work simulations from Forage — designed by companies to mimic entry-level analyst tasks and real-world decision-making.
+
+**Planned Programs:**
+- Accenture North America Cybersecurity
+- Mastercard Cybersecurity & Risk
+- PwC Cybersecurity
+
+These programs emphasize:
+- Threat modeling
+- Risk assessments
+- Incident response planning
+- Client communications and reporting
+
+> This section will be updated as programs are completed and certificates are earned.
+
+</details>
+
 This section will be updated as each program is completed.
 ---
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/stevenloucks)  
