@@ -1,9 +1,13 @@
 # Steven Loucks' Personal Website
 
+---
+
 Welcome to my personal website hosted on GitHub Pages. Here, I share my projects, blog posts, lab documentation, and tutorials related to cybersecurity and technology.
+
 ---
+
 ## 📂 Sections
----
+
 - [Projects](https://stevenloucks.github.io/projects): A showcase of my work.
 - [Lab Projects](https://stevenloucks.github.io/labs): Hands-on cybersecurity labs with documentation and diagrams.
 - [Blog](https://stevenloucks.github.io/blog): Articles and insights on cybersecurity and career development.
