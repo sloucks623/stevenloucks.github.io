@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Markdown, CSS, and AI: Building My GitHub Portfolio from Scratch</title>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/style.css" />
+<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+  <h1><a href="/"></a></h1>
+  <nav>
+    <ul>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+      <!-- Main -->
+      <section id="main">
+        <article class="post">
+  <header>
+    <h1>Markdown, CSS, and AI: Building My GitHub Portfolio from Scratch</h1>
+    <p><small>Published on May 10, 2025</small></p>
+  </header>
+  <section class="post-content">
+    <p>When I started building my personal cybersecurity portfolio, I had no coding background. None. What I <em>did</em> have was motivation, curiosity, and access to free tools — GitHub, Jekyll, and a powerful assistant named ChatGPT. That’s how <a href="https://stevenloucks.tech">stevenloucks.tech</a> was born.</p>
+
+<p>But it wasn’t easy. It still isn’t. This post is a breakdown of the tools I’ve been learning — Markdown, CSS, Liquid, and more — and the real journey of making it all work (and sometimes break) with a lot of help from AI.</p>
+
+<hr />
+
+<h2 id="markdown-md-my-starting-point">Markdown (<code class="language-plaintext highlighter-rouge">.md</code>): My Starting Point</h2>
+
+<p>Markdown is a plain-text writing format that turns into HTML when the site is built. It’s how I write blog posts like this, document labs, and structure content for my GitHub Pages site.</p>
+
+<p>It’s beginner-friendly, but that doesn’t mean I didn’t mess it up repeatedly. I’d forget headers, miss brackets on links, or leave off front matter — and wonder why the page wouldn’t render.</p>
+
+<hr />
+
+<h2 id="css-css-making-it-not-look-like-1999">CSS (<code class="language-plaintext highlighter-rouge">.css</code>): Making It Not Look Like 1999</h2>
+
+<p>CSS handles all the styling — fonts, colors, banners, buttons, cards, shadows. If Markdown is the skeleton, CSS is the wardrobe and makeup.</p>
+
+<p>I wanted a clean, modern look with bold visuals, so I:</p>
+<ul>
+  <li>Created section headers with angled mustard-orange banners</li>
+  <li>Styled lab projects as floating cards with hover effects</li>
+  <li>Customized buttons and fonts for a tech-forward aesthetic</li>
+</ul>
+
+<p>Getting that styling to cooperate across browsers (or even devices) was <strong>way harder</strong> than I expected.</p>
+
+<hr />
+
+<h2 id="the-frustration-of-broken-links-and-image-files">The Frustration of Broken Links and Image Files</h2>
+
+<p>One of the most painful parts was chasing down broken things — especially image icons. Half the time it was something like:</p>
+
+<ul>
+  <li>I used <code class="language-plaintext highlighter-rouge">.jpg</code> instead of <code class="language-plaintext highlighter-rouge">.png</code></li>
+  <li>A file was in the wrong folder</li>
+  <li>The file name had a capital letter, and GitHub is case-sensitive</li>
+  <li>The path worked locally but broke on GitHub Pages</li>
+</ul>
+
+<p>I would spend <strong>hours</strong> trying to fix a badge icon that just wouldn’t show up, only to find I’d written <code class="language-plaintext highlighter-rouge">SecurityPlus.JPG</code> instead of <code class="language-plaintext highlighter-rouge">securityplus.png</code>.</p>
+
+<hr />
+
+<h2 id="what-else-i-had-to-learn-still-learning">What Else I Had to Learn (Still Learning…)</h2>
+
+<h3 id="html">HTML</h3>
+<p>I didn’t plan to write HTML, but I had to. Jekyll mixes Markdown with embedded HTML. Now I can write a basic layout, link to sections, and even customize div structures.</p>
+
+<h3 id="yaml-yml">YAML (<code class="language-plaintext highlighter-rouge">.yml</code>)</h3>
+<p>This one surprised me. YAML is used for structured data in Jekyll. I store my certifications and lab metadata in <code class="language-plaintext highlighter-rouge">_data/certifications.yml</code>, which lets me reuse content across the site.</p>
+
+<h3 id="liquid">Liquid</h3>
+<p>Liquid is Jekyll’s templating language — I still don’t fully understand it, but I’ve figured out how to loop through YAML files and conditionally render content like my lab cards and Credly badges.</p>
+
+<h3 id="git-and-branching">Git and Branching</h3>
+<p>Branching and merging repositories is still a work in progress. I’ve created protected branches like <code class="language-plaintext highlighter-rouge">stable-v1</code> and <code class="language-plaintext highlighter-rouge">working-copy</code>, and I’m learning to test changes without breaking my live site. It’s not always graceful, but I’m getting there.</p>
+
+<hr />
+
+<h2 id="ai-was-my-secret-weapon">AI Was My Secret Weapon</h2>
+
+<p>I built this site in partnership with <strong>AI (ChatGPT)</strong>. Without it, I would’ve been lost. I asked questions like:</p>
+<ul>
+  <li>“Why isn’t my badge showing?”</li>
+  <li>“Write me a collapsible grid in HTML.”</li>
+  <li>“Make this blog look better.”</li>
+</ul>
+
+<p>Sometimes I didn’t even know the <em>right question</em> — just pasted my broken code and asked for help. And every time, the response helped me move forward.</p>
+
+<p>But let’s be honest: <strong>AI didn’t build the site for me</strong>. I still had to learn it. I still had to:</p>
+<ul>
+  <li>Rebuild sections I broke</li>
+  <li>Copy and paste code a hundred times</li>
+  <li>Manually fix filenames and file paths</li>
+  <li>Choose a theme, then customize it line-by-line</li>
+</ul>
+
+<p>Using AI wasn’t a shortcut. It was a <strong>learning partner</strong> — and a lifeline during late nights of trial-and-error.</p>
+
+<hr />
+
+<h2 id="still-not-done--but-proud-of-whats-here">Still Not Done — But Proud of What’s Here</h2>
+
+<p>The truth is, my site still isn’t exactly how I want it. I’m still:</p>
+<ul>
+  <li>Tweaking the layout</li>
+  <li>Refining colors and fonts</li>
+  <li>Fixing things that look off on mobile</li>
+  <li>Reorganizing labs and blog sections</li>
+</ul>
+
+<p>But I’m proud of how far it’s come. It started as a blank GitHub repo, and now it’s a working portfolio at <a href="https://stevenloucks.tech">stevenloucks.tech</a>, with working links, real projects, custom styling, and growing content.</p>
+
+<hr />
+
+<h2 id="if-youre-just-starting-out">If You’re Just Starting Out</h2>
+
+<p>Here’s what I’ve learned:</p>
+<ul>
+  <li><strong>Start with Markdown</strong> — it’s easy, and powerful.</li>
+  <li><strong>Don’t fear CSS</strong> — small changes make big visual impacts.</li>
+  <li><strong>You will break things</strong> — that’s normal.</li>
+  <li><strong>Use AI smartly</strong> — it’s a teacher, not a crutch.</li>
+  <li><strong>Track your progress</strong> — you’ll be amazed at how much you learn.</li>
+</ul>
+
+<p>Thanks for reading. If you’re also trying to build a portfolio, feel free to reach out or follow along — I’m still figuring it out too.</p>
+
+  </section>
+</article>
+
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+  <ul class="copyright">
+    <li>&copy; . All rights reserved.</li>
+    <li>Built with Jekyll + Prologue Theme</li>
+  </ul>
+</footer>
+
+
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollex.min.js"></script>
+<script src="/js/jquery.scrolly.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

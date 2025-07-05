@@ -1,0 +1,26 @@
+body {
+  background-color: #1d1f21;
+  color: #ccc;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.hero {
+  background-color: #114422;
+  padding: 2rem;
+  text-align: center;
+}
+
+.section {
+  background-color: #2a2c30;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+.card {
+  background-color: #333842;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+}

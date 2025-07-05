@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>When the Tutorial Breaks, Keep Building Anyway</title>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/style.css" />
+<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+  <h1><a href="/"></a></h1>
+  <nav>
+    <ul>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+      <!-- Main -->
+      <section id="main">
+        <article class="post">
+  <header>
+    <h1>When the Tutorial Breaks, Keep Building Anyway</h1>
+    <p><small>Published on May 19, 2025</small></p>
+  </header>
+  <section class="post-content">
+    <p>Today I hit a wall.</p>
+
+<p>The plan was simple: boot the VMs, follow the tutorial, and bring AD Lab 1.0 online. But everything broke the second I tried to follow it. The VirtualBox UI was different. Ubuntu’s netplan config had changed. The internet was dead. The commands shown in the video? Outdated or outright missing.</p>
+
+<blockquote>
+  <p>This tutorial is only a year old — and parts of it are already unusable.</p>
+</blockquote>
+
+<p>I checked the comments:</p>
+<ul>
+  <li>“Thanks! Worked first try.”</li>
+  <li>“Super helpful!”</li>
+  <li>“Got it up and running in no time!”</li>
+</ul>
+
+<p>And I couldn’t help but wonder…<br />
+<strong>Did these people actually build the lab, or just watch the video and click ‘like’?</strong></p>
+
+<p>Because what I went through wasn’t that.</p>
+
+<hr />
+
+<h2 id="the-real-breakpoint">The Real Breakpoint</h2>
+
+<p>The tutorial designs the lab as a <strong>fully isolated network</strong> — no internet access by default.</p>
+
+<p>Great for realism. Terrible for practicality.</p>
+
+<p>If you don’t <em>plan ahead</em> to allow temporary external access:</p>
+<ul>
+  <li>You can’t download updates</li>
+  <li>You can’t install tools (like Splunk Forwarder)</li>
+  <li>And when you finally realize it… it’s <strong>too late to patch anything</strong></li>
+  <li>You’re rebuilding the entire VM from scratch</li>
+</ul>
+
+<p>And that’s exactly what happened.</p>
+
+<hr />
+
+<h2 id="how-i-fought-back">How I Fought Back</h2>
+
+<p>Instead of quitting, I did what any tired but stubborn cyber student would do:</p>
+
+<blockquote>
+  <p><strong>I invoked the power of ChatGPT.</strong></p>
+</blockquote>
+
+<p>I dumped YAML files into it. I asked it to explain deprecated syntax. I walked through network configs line by line — and it helped me keep going when nothing made sense.</p>
+
+<p>Then, after everything was “correct” —</p>
+<blockquote>
+  <p>I stared at a broken CLI output for over an hour.</p>
+</blockquote>
+
+<p>The config looked fine. The commands were clean. The logic checked out.<br />
+And then… I saw it:</p>
+<blockquote>
+  <p>I had misspelled the interface name.<br />
+Twice.</p>
+</blockquote>
+
+<p>That’s what learning in this field looks like sometimes: debugging typos while barely awake at 2AM.</p>
+
+<hr />
+
+<h2 id="what-i-actually-did">What I Actually Did</h2>
+
+<ul>
+  <li>Rebuilt the entire lab from scratch</li>
+  <li>Modified VirtualBox to use a NAT adapter alongside internal ones</li>
+  <li>Verified connectivity for updates before isolating the network</li>
+  <li>Used ChatGPT to troubleshoot netplan and CLI errors</li>
+  <li>Documented every config change that diverged from the video</li>
+</ul>
+
+<hr />
+
+<h2 id="what-i-learned">What I Learned</h2>
+
+<p>You can’t treat tutorials like gospel.<br />
+You have to <em>understand</em> the logic.<br />
+You have to break things, fix them, break them again, and <strong>document the chaos</strong>.</p>
+
+<p>And most of all:</p>
+<blockquote>
+  <p><strong>Hackers don’t sleep. And neither do students who want to catch up.</strong></p>
+</blockquote>
+
+<hr />
+
+<p><strong>Written by Steven Loucks — cybersecurity student, veteran, and lab builder</strong></p>
+
+  </section>
+</article>
+
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+  <ul class="copyright">
+    <li>&copy; . All rights reserved.</li>
+    <li>Built with Jekyll + Prologue Theme</li>
+  </ul>
+</footer>
+
+
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollex.min.js"></script>
+<script src="/js/jquery.scrolly.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
+  </body>
+</html>
