@@ -1,0 +1,29 @@
+{
+  "total_labs": 5,
+  "completed_labs": 2,
+  "in_progress_labs": 3,
+  "overall_progress": 91.2,
+  "total_hours": 82,
+  "completed_hours": 74,
+  "categories": {
+    "Security Operations": {
+      "total": 1,
+      "completed": 0
+    },
+    "Identity Management": {
+      "total": 2,
+      "completed": 1
+    },
+    "Threat Detection": {
+      "total": 1,
+      "completed": 0
+    },
+    "Service Management": {
+      "total": 1,
+      "completed": 1
+    }
+  },
+  "last_updated": "2025-07-08 10:55:18",
+  "portfolio_url": "https://stevenloucks.tech",
+  "github_profile": "https://github.com/sloucks623"
+}

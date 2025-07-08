@@ -1,0 +1,138 @@
+/* Lab Status Widget Styles */
+.lab-status-widget {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.lab-status-widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00ff87, #60efff, #00ff87);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 200% 0; }
+    50% { background-position: -200% 0; }
+}
+
+.lab-status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.lab-status-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.lab-status-badge {
+    background: rgba(0, 255, 135, 0.2);
+    color: #00ff87;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    border: 1px solid rgba(0, 255, 135, 0.3);
+}
+
+.lab-progress-container {
+    margin: 15px 0;
+}
+
+.lab-progress-label {
+    display: flex;
+    justify-content: space-between;
+    color: #b8c5d1;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.lab-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.lab-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff87, #60efff);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.lab-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: progress-shine 2s ease-in-out infinite;
+}
+
+@keyframes progress-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.lab-status-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.lab-status-item {
+    display: flex;
+    align-items: center;
+    color: #b8c5d1;
+    font-size: 0.9em;
+}
+
+.lab-status-icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.lab-status-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.lab-status-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.lab-status-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

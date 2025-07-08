@@ -1,0 +1,56 @@
+<!-- Lab Status Widget Component -->
+<div class="lab-status-widget" id="lab-widget-{{ lab.id }}">
+    <div class="lab-status-header">
+        <h3 class="lab-status-title">{{ lab.name }}</h3>
+        <span class="lab-status-badge">{{ lab.status }}</span>
+    </div>
+    
+    <p style="color: #b8c5d1; margin: 10px 0; font-size: 0.9em;">{{ lab.description }}</p>
+    
+    <div class="lab-progress-container">
+        <div class="lab-progress-label">
+            <span>Overall Progress</span>
+            <span>{{ lab.progress }}%</span>
+        </div>
+        <div class="lab-progress-bar">
+            <div class="lab-progress-fill" style="width: {{ lab.progress }}%; background-color: {{ lab.status_color }};"></div>
+        </div>
+    </div>
+    
+    <div class="lab-status-details">
+        <div class="lab-status-item">
+            <span class="lab-status-icon">🎯</span>
+            <span>{{ lab.category }}</span>
+        </div>
+        <div class="lab-status-item">
+            <span class="lab-status-icon">⏱️</span>
+            <span>{{ lab.completed_hours }}/{{ lab.estimated_hours }}h</span>
+        </div>
+        <div class="lab-status-item">
+            <span class="lab-status-icon">📊</span>
+            <span>{{ lab.difficulty }}</span>
+        </div>
+        <div class="lab-status-item">
+            <span class="lab-status-icon">📅</span>
+            <span>{{ lab.last_updated }}</span>
+        </div>
+    </div>
+    
+    {% if lab.itil_compliance %}
+    <div class="lab-status-item" style="margin-top: 10px; color: #00ff87;">
+        <span class="lab-status-icon">✅</span>
+        <span>ITIL 4 Compliant</span>
+    </div>
+    {% endif %}
+    
+    <div class="lab-status-links">
+        <a href="{{ lab.github_url }}" class="lab-status-link" target="_blank">
+            📁 Repository
+        </a>
+        {% if lab.itil_compliance %}
+        <a href="{{ lab.itil_compliance_url }}" class="lab-status-link" target="_blank">
+            📋 ITIL Compliance
+        </a>
+        {% endif %}
+    </div>
+</div>

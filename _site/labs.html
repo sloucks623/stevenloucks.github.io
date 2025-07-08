@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Laboratory Projects - Steven Loucks</title>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/style.css" />
+<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header">
+  <h1><a href="/"></a></h1>
+  <nav>
+    <ul>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+      <!-- Main -->
+      <section id="main">
+        <style>
+/* Enhanced lab page styles */
+.lab-page-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 60px 20px;
+    margin: -20px -20px 40px -20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.lab-page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.lab-page-title {
+    font-size: 3em;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.lab-page-subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.lab-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.lab-stat {
+    text-align: center;
+}
+
+.lab-stat-value {
+    font-size: 2em;
+    font-weight: 700;
+    color: #00ff87;
+}
+
+.lab-stat-label {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.back-to-portfolio {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.back-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .lab-page-title {
+        font-size: 2em;
+    }
+    
+    .lab-stats-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .labs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+</style>
+
+<link rel="stylesheet" href="/css/lab-status-widget.css">
+
+<div class="lab-page-header">
+    <h1 class="lab-page-title">🔬 Laboratory Projects</h1>
+    <p class="lab-page-subtitle">
+        Comprehensive cybersecurity labs demonstrating real-world skills through hands-on implementation, 
+        documentation, and professional service management practices.
+    </p>
+    <div class="lab-stats-bar">
+        <div class="lab-stat">
+            <div class="lab-stat-value" id="total-labs">5</div>
+            <div class="lab-stat-label">Total Labs</div>
+        </div>
+        <div class="lab-stat">
+            <div class="lab-stat-value" id="completed-labs">2</div>
+            <div class="lab-stat-label">Completed</div>
+        </div>
+        <div class="lab-stat">
+            <div class="lab-stat-value" id="portfolio-progress">90%</div>
+            <div class="lab-stat-label">Progress</div>
+        </div>
+    </div>
+</div>
+
+<!-- Prominent Dashboard Button -->
+<div style="text-align: center; margin: 1.5rem 0; max-width: 1200px; margin-left: auto; margin-right: auto;">
+  <button id="dashboard-toggle" style="
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto;
+    min-width: 280px;
+  " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.5)'" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'">
+    <span>📊</span>
+    <span>Lab Progress Dashboard</span>
+    <span id="dashboard-preview" style="
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    ">91.2% Complete</span>
+  </button>
+  <div style="
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+  ">
+    🔍 Click to view detailed task-based progress, completion rates, and lab breakdowns
+  </div>
+</div>
+
+<!-- Portfolio Dashboard Summary -->
+<div id="portfolio-dashboard-container" style="max-width: 1200px; margin: 0 auto 40px auto; display: none;"></div>
+
+<!-- Individual Lab Status Widgets -->
+<div class="labs-grid">
+    <div id="lab-widgets-container"></div>
+</div>
+
+<!-- ITIL 4 Compliance Section -->
+<div style="background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); padding: 40px; border-radius: 16px; margin: 40px auto; max-width: 1200px; color: white; text-align: center;">
+    <h2 style="margin: 0 0 20px 0; font-size: 1.8em;">📋 ITIL 4 Service Management Compliance</h2>
+    <p style="margin: 0 0 30px 0; font-size: 1.1em; opacity: 0.9;">
+        All laboratory projects demonstrate professional service management practices aligned with ITIL 4 principles, 
+        integrating academic learning with industry best practices.
+    </p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="/frameworks/itil-4-cheat-sheet.md" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;">
+            📘 ITIL 4 Framework Reference
+        </a>
+        <a href="https://github.com/sloucks623?tab=repositories&q=lab-" target="_blank" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease;">
+            🔗 All Lab Repositories
+        </a>
+    </div>
+</div>
+
+<div class="back-to-portfolio">
+    <a href="/" class="back-link">← Back to Portfolio</a>
+</div>
+
+<script src="/js/lab-dashboard.js"></script>
+<script>
+// Update header stats when data loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for dashboard to load data
+    setTimeout(() => {
+        if (window.labDashboard && window.labDashboard.dashboardData) {
+            const data = window.labDashboard.dashboardData;
+            document.getElementById('total-labs').textContent = data.total_labs;
+            document.getElementById('completed-labs').textContent = data.completed_labs;
+            document.getElementById('portfolio-progress').textContent = data.overall_progress + '%';
+        }
+    }, 1000);
+
+    // Dashboard toggle functionality
+    const dashboardToggle = document.getElementById('dashboard-toggle');
+    const dashboardContainer = document.getElementById('portfolio-dashboard-container');
+    const dashboardPreview = document.getElementById('dashboard-preview');
+    
+    // Toggle dashboard visibility
+    dashboardToggle.addEventListener('click', () => {
+        if (dashboardContainer.style.display === 'none') {
+            dashboardContainer.style.display = 'block';
+            dashboardToggle.innerHTML = `
+                <span>📊</span>
+                <span>Hide Dashboard</span>
+                <span style="
+                    background: rgba(255, 255, 255, 0.2);
+                    padding: 4px 8px;
+                    border-radius: 8px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                ">91.2% Complete</span>
+            `;
+        } else {
+            dashboardContainer.style.display = 'none';
+            dashboardToggle.innerHTML = `
+                <span>📊</span>
+                <span>Lab Progress Dashboard</span>
+                <span style="
+                    background: rgba(255, 255, 255, 0.2);
+                    padding: 4px 8px;
+                    border-radius: 8px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                ">91.2% Complete</span>
+            `;
+        }
+    });
+    
+    // Initialize dashboard on page load
+    if (typeof window.labDashboard === 'object' && window.labDashboard.initializeDashboard) {
+        window.labDashboard.initializeDashboard();
+    }
+});
+</script>
+
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+  <ul class="copyright">
+    <li>&copy; . All rights reserved.</li>
+    <li>Built with Jekyll + Prologue Theme</li>
+  </ul>
+</footer>
+
+
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollex.min.js"></script>
+<script src="/js/jquery.scrolly.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
+  </body>
+</html>

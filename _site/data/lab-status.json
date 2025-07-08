@@ -1,0 +1,157 @@
+{
+  "lab-soc-automation": {
+    "id": "lab-soc-automation",
+    "name": "SOC Automation Lab",
+    "description": "SOAR platform deployment and automation workflows",
+    "category": "Security Operations",
+    "difficulty": "Advanced",
+    "status": "In Progress",
+    "progress": 84.0,
+    "estimated_hours": 16,
+    "completed_hours": 14,
+    "completed_tasks": 21,
+    "total_tasks": 25,
+    "last_updated": "2025-01-07",
+    "status_color": "#60efff",
+    "components": {
+      "Environment Setup": 100,
+      "SOAR Platform": 90,
+      "Playbook Development": 85,
+      "Integration Testing": 60,
+      "Documentation": 80
+    },
+    "technologies": [
+      "Phantom",
+      "Python",
+      "REST APIs",
+      "JSON"
+    ],
+    "itil_compliance": true,
+    "github_url": "https://github.com/sloucks623/lab-soc-automation",
+    "itil_compliance_url": "https://github.com/sloucks623/lab-soc-automation/blob/main/ITIL-4-COMPLIANCE.md"
+  },
+  "lab-active-directory-1.0": {
+    "id": "lab-active-directory-1.0",
+    "name": "Active Directory Lab v1.0",
+    "description": "Windows domain controller and user management",
+    "category": "Identity Management",
+    "difficulty": "Intermediate",
+    "status": "Complete",
+    "progress": 100.0,
+    "estimated_hours": 12,
+    "completed_hours": 12,
+    "completed_tasks": 25,
+    "total_tasks": 25,
+    "last_updated": "2025-01-07",
+    "status_color": "#00ff87",
+    "components": {
+      "Domain Controller": 100,
+      "User Management": 100,
+      "Group Policy": 100,
+      "DNS Configuration": 100,
+      "Security Hardening": 100
+    },
+    "technologies": [
+      "Windows Server",
+      "PowerShell",
+      "DNS",
+      "LDAP"
+    ],
+    "itil_compliance": true,
+    "github_url": "https://github.com/sloucks623/lab-active-directory-1.0",
+    "itil_compliance_url": "https://github.com/sloucks623/lab-active-directory-1.0/blob/main/ITIL-4-COMPLIANCE.md"
+  },
+  "lab-active-directory-2.0": {
+    "id": "lab-active-directory-2.0",
+    "name": "Active Directory Lab v2.0",
+    "description": "Advanced AD features and multi-forest architecture",
+    "category": "Identity Management",
+    "difficulty": "Advanced",
+    "status": "In Progress",
+    "progress": 88.0,
+    "estimated_hours": 20,
+    "completed_hours": 18,
+    "completed_tasks": 22,
+    "total_tasks": 25,
+    "last_updated": "2025-01-07",
+    "status_color": "#60efff",
+    "components": {
+      "Multi-Forest Setup": 100,
+      "Trust Relationships": 95,
+      "Advanced GPO": 90,
+      "Certificate Services": 85,
+      "Monitoring Setup": 70
+    },
+    "technologies": [
+      "Windows Server",
+      "PowerShell",
+      "PKI",
+      "SCOM"
+    ],
+    "itil_compliance": true,
+    "github_url": "https://github.com/sloucks623/lab-active-directory-2.0",
+    "itil_compliance_url": "https://github.com/sloucks623/lab-active-directory-2.0/blob/main/ITIL-4-COMPLIANCE.md"
+  },
+  "lab-detection-1.0": {
+    "id": "lab-detection-1.0",
+    "name": "Threat Detection Lab",
+    "description": "SIEM deployment and threat hunting exercises",
+    "category": "Threat Detection",
+    "difficulty": "Advanced",
+    "status": "In Progress",
+    "progress": 84.0,
+    "estimated_hours": 24,
+    "completed_hours": 20,
+    "completed_tasks": 21,
+    "total_tasks": 25,
+    "last_updated": "2025-01-07",
+    "status_color": "#60efff",
+    "components": {
+      "SIEM Installation": 100,
+      "Log Ingestion": 95,
+      "Detection Rules": 85,
+      "Threat Hunting": 75,
+      "Incident Response": 60
+    },
+    "technologies": [
+      "Splunk",
+      "Suricata",
+      "Zeek",
+      "Python"
+    ],
+    "itil_compliance": true,
+    "github_url": "https://github.com/sloucks623/lab-detection-1.0",
+    "itil_compliance_url": "https://github.com/sloucks623/lab-detection-1.0/blob/main/ITIL-4-COMPLIANCE.md"
+  },
+  "lab-soc-helpdesk": {
+    "id": "lab-soc-helpdesk",
+    "name": "SOC Help Desk Lab",
+    "description": "Incident management and ticketing system implementation",
+    "category": "Service Management",
+    "difficulty": "Intermediate",
+    "status": "Complete",
+    "progress": 100.0,
+    "estimated_hours": 10,
+    "completed_hours": 10,
+    "completed_tasks": 25,
+    "total_tasks": 25,
+    "last_updated": "2025-01-07",
+    "status_color": "#00ff87",
+    "components": {
+      "Ticketing System": 100,
+      "Workflow Design": 100,
+      "SLA Configuration": 100,
+      "Reporting Setup": 100,
+      "User Training": 100
+    },
+    "technologies": [
+      "ServiceNow",
+      "ITIL",
+      "REST APIs",
+      "JavaScript"
+    ],
+    "itil_compliance": true,
+    "github_url": "https://github.com/sloucks623/lab-soc-helpdesk",
+    "itil_compliance_url": "https://github.com/sloucks623/lab-soc-helpdesk/blob/main/ITIL-4-COMPLIANCE.md"
+  }
+}

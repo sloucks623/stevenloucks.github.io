@@ -1,0 +1,236 @@
+/* Lab Progress Dashboard Styles */
+.lab-progress-dashboard {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 950px;
+    box-shadow: 0 8px 32px rgba(45, 55, 72, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.progress-header h3 {
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.progress-header .overall-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.progress-stat {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.progress-stat .stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #63b3ed;
+    line-height: 1;
+}
+
+.progress-stat .stat-label {
+    font-size: 0.9rem;
+    color: #cbd5e0;
+    margin-top: 0.2rem;
+}
+
+.overall-progress-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: 12px;
+    margin: 1rem auto;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.overall-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #38a169 0%, #48bb78 50%, #68d391 100%);
+    border-radius: 8px;
+    transition: width 0.3s ease;
+}
+
+.lab-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.lab-progress-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lab-progress-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.lab-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+}
+
+.lab-progress-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.lab-status-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-complete {
+    background-color: #38a169;
+    color: white;
+}
+
+.status-in-progress {
+    background-color: #d69e2e;
+    color: white;
+}
+
+.status-not-started {
+    background-color: #718096;
+    color: white;
+}
+
+.lab-progress-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    height: 8px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.lab-progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.progress-0 { background-color: #718096; }
+.progress-low { background: linear-gradient(90deg, #e53e3e 0%, #fc8181 100%); }
+.progress-medium { background: linear-gradient(90deg, #d69e2e 0%, #f6e05e 100%); }
+.progress-high { background: linear-gradient(90deg, #38a169 0%, #68d391 100%); }
+
+.lab-progress-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #cbd5e0;
+}
+
+.components-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.progress-percentage {
+    font-weight: 600;
+    color: #63b3ed;
+}
+
+/* Compact mode for smaller screens */
+@media (max-width: 768px) {
+    .lab-progress-dashboard {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .progress-header .overall-stats {
+        gap: 1rem;
+    }
+    
+    .progress-stat .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .lab-progress-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lab-progress-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .lab-status-badge {
+        align-self: flex-start;
+    }
+}
+
+/* Dark mode enhancements */
+.dark-theme .lab-progress-dashboard {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .lab-progress-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Integration with existing card hover effects */
+.lab-progress-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Loading state */
+.lab-progress-loading {
+    text-align: center;
+    padding: 2rem;
+    color: #cbd5e0;
+}
+
+.lab-progress-loading::after {
+    content: "⏳";
+    display: block;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Error state */
+.lab-progress-error {
+    text-align: center;
+    padding: 2rem;
+    color: #fc8181;
+    background: rgba(229, 62, 62, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(229, 62, 62, 0.2);
+}

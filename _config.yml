@@ -1,0 +1,34 @@
+# Jekyll Configuration for GitHub Pages
+title: Steven Loucks - Cybersecurity Portfolio
+description: Navy Veteran | Business Owner | Cybersecurity Student
+url: "https://stevenloucks.tech"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# GitHub Pages specific settings
+github:
+  repository_url: https://github.com/sloucks623/stevenloucks.github.io
+
+# Force rebuild timestamp
+rebuilt_at: "2025-07-08T12:00:00Z"
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - deploy.bat
+
+# Include files that would normally be excluded
+include:
+  - _pages
+  - assets
+  - css
+  - js
+  - data

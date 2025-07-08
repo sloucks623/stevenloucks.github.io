@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Lab Progress Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .lab-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .lab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .lab-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .lab-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .status-not-started { background: #f8f9fa; color: #6c757d; }
+        .status-in-progress { background: #fff3cd; color: #856404; }
+        .status-completed { background: #d4edda; color: #155724; }
+
+        .lab-progress {
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #28a745, #20c997);
+            height: 100%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .lab-phases {
+            margin-top: 15px;
+        }
+
+        .phase {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .phase-name {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .phase-progress {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .tasks-list {
+            margin-top: 10px;
+        }
+
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-name {
+            font-size: 0.9em;
+            color: #495057;
+        }
+
+        .task-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .task-status-btn {
+            padding: 4px 8px;
+            border: none;
+            border-radius: 15px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-start { background: #ffc107; color: #212529; }
+        .btn-complete { background: #28a745; color: white; }
+        .btn-reset { background: #dc3545; color: white; }
+
+        .task-status-btn:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .add-lab-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-lab-form {
+            display: flex;
+            gap: 15px;
+            align-items: end;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .btn-add {
+            padding: 12px 24px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-add:hover {
+            background: #0056b3;
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .notifications {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .notification {
+            background: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease;
+        }
+
+        .notification.error {
+            background: #dc3545;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .lab-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .add-lab-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .summary-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 Smart Lab Progress Tracker</h1>
+            <p>Intelligent progress tracking with ChatGPT-powered assessments</p>
+        </div>
+
+        <div class="summary-stats" id="summaryStats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalLabs">0</div>
+                <div class="stat-label">Total Labs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completedLabs">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="inProgressLabs">0</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalHours">0</div>
+                <div class="stat-label">Hours Spent</div>
+            </div>
+        </div>
+
+        <div class="add-lab-section">
+            <h2>➕ Add New Lab</h2>
+            <div class="add-lab-form">
+                <div class="form-group">
+                    <label for="labName">Lab Name</label>
+                    <input type="text" id="labName" placeholder="Enter lab name">
+                </div>
+                <div class="form-group">
+                    <label for="tutorialUrl">Tutorial URL</label>
+                    <input type="url" id="tutorialUrl" placeholder="https://example.com/tutorial">
+                </div>
+                <button class="btn-add" onclick="addNewLab()">Create Lab</button>
+            </div>
+        </div>
+
+        <div class="lab-grid" id="labGrid">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading labs...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notifications" id="notifications"></div>
+
+    <script>
+        let labsData = [];
+        let progressData = {};
+
+        // Demo data for testing (replace with real data loading)
+        const demoLabsData = [
+            {
+                name: "Active Directory Lab",
+                description: "Complete AD deployment and configuration",
+                category: "Identity Management",
+                progress: 65,
+                status: "In Progress",
+                estimated_hours: 12,
+                actual_hours: 8,
+                completed_tasks: 13,
+                total_tasks: 20,
+                last_updated: "2025-01-11T10:30:00Z"
+            },
+            {
+                name: "SIEM Implementation",
+                description: "Deploy and configure SIEM solution",
+                category: "Security Operations",
+                progress: 100,
+                status: "Completed",
+                estimated_hours: 8,
+                actual_hours: 7.5,
+                completed_tasks: 15,
+                total_tasks: 15,
+                last_updated: "2025-01-10T16:45:00Z"
+            },
+            {
+                name: "Network Penetration Testing",
+                description: "Comprehensive network security assessment",
+                category: "Penetration Testing",
+                progress: 0,
+                status: "Not Started",
+                estimated_hours: 15,
+                actual_hours: 0,
+                completed_tasks: 0,
+                total_tasks: 25,
+                last_updated: "2025-01-11T09:00:00Z"
+            }
+        ];
+
+        // Demo progress data
+        const demoProgressData = {
+            "Active Directory Lab": {
+                phases: [
+                    {
+                        phase_name: "Environment Setup",
+                        progress: 100,
+                        components: [
+                            {
+                                component_name: "VM Configuration",
+                                tasks: [
+                                    { task_id: "vm1", task_name: "Create Domain Controller VM", status: "Completed" },
+                                    { task_id: "vm2", task_name: "Create Client VM", status: "Completed" }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        phase_name: "Domain Configuration",
+                        progress: 60,
+                        components: [
+                            {
+                                component_name: "Domain Setup",
+                                tasks: [
+                                    { task_id: "domain1", task_name: "Install AD DS", status: "Completed" },
+                                    { task_id: "domain2", task_name: "Configure DNS", status: "In Progress" },
+                                    { task_id: "domain3", task_name: "Create OUs", status: "Not Started" }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        function loadLabsData() {
+            // In a real implementation, this would load from the JSON files
+            labsData = demoLabsData;
+            updateSummaryStats();
+            renderLabs();
+        }
+
+        function updateSummaryStats() {
+            const totalLabs = labsData.length;
+            const completedLabs = labsData.filter(lab => lab.status === 'Completed').length;
+            const inProgressLabs = labsData.filter(lab => lab.status === 'In Progress').length;
+            const totalHours = labsData.reduce((sum, lab) => sum + lab.actual_hours, 0);
+
+            document.getElementById('totalLabs').textContent = totalLabs;
+            document.getElementById('completedLabs').textContent = completedLabs;
+            document.getElementById('inProgressLabs').textContent = inProgressLabs;
+            document.getElementById('totalHours').textContent = totalHours.toFixed(1);
+        }
+
+        function renderLabs() {
+            const labGrid = document.getElementById('labGrid');
+            
+            if (labsData.length === 0) {
+                labGrid.innerHTML = '<div class="loading"><p>No labs found. Create your first lab above!</p></div>';
+                return;
+            }
+
+            labGrid.innerHTML = labsData.map(lab => `
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <div class="lab-title">${lab.name}</div>
+                        <div class="lab-status status-${lab.status.toLowerCase().replace(' ', '-')}">${lab.status}</div>
+                    </div>
+                    
+                    <div class="lab-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${lab.progress}%"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span>${lab.progress}% Complete</span>
+                            <span>${lab.completed_tasks}/${lab.total_tasks} tasks</span>
+                        </div>
+                    </div>
+
+                    <p style="color: #6c757d; margin-bottom: 15px;">${lab.description}</p>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                        <span><strong>Category:</strong> ${lab.category}</span>
+                        <span><strong>Hours:</strong> ${lab.actual_hours}/${lab.estimated_hours}</span>
+                    </div>
+
+                    <div class="lab-phases">
+                        ${renderLabPhases(lab.name)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderLabPhases(labName) {
+            const progress = demoProgressData[labName];
+            if (!progress) return '<p style="color: #6c757d;">No detailed progress data available.</p>';
+
+            return progress.phases.map(phase => `
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-name">${phase.phase_name}</div>
+                        <div class="phase-progress">${phase.progress}%</div>
+                    </div>
+                    
+                    <div class="tasks-list">
+                        ${phase.components.flatMap(component => 
+                            component.tasks.map(task => `
+                                <div class="task-item">
+                                    <div class="task-name">${task.task_name}</div>
+                                    <div class="task-controls">
+                                        <button class="task-status-btn ${getTaskButtonClass(task.status)}" 
+                                                onclick="updateTaskStatus('${labName}', '${task.task_id}', '${task.status}')">
+                                            ${getTaskButtonText(task.status)}
+                                        </button>
+                                    </div>
+                                </div>
+                            `)
+                        ).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getTaskButtonClass(status) {
+            switch(status) {
+                case 'Completed': return 'btn-reset';
+                case 'In Progress': return 'btn-complete';
+                default: return 'btn-start';
+            }
+        }
+
+        function getTaskButtonText(status) {
+            switch(status) {
+                case 'Completed': return 'Reset';
+                case 'In Progress': return 'Complete';
+                default: return 'Start';
+            }
+        }
+
+        function updateTaskStatus(labName, taskId, currentStatus) {
+            let newStatus;
+            switch(currentStatus) {
+                case 'Completed':
+                    newStatus = 'Not Started';
+                    break;
+                case 'In Progress':
+                    newStatus = 'Completed';
+                    break;
+                default:
+                    newStatus = 'In Progress';
+            }
+
+            // Update the demo data
+            const progress = demoProgressData[labName];
+            if (progress) {
+                progress.phases.forEach(phase => {
+                    phase.components.forEach(component => {
+                        component.tasks.forEach(task => {
+                            if (task.task_id === taskId) {
+                                task.status = newStatus;
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Update lab progress
+            updateLabProgress(labName);
+            
+            // Re-render
+            renderLabs();
+            updateSummaryStats();
+            
+            showNotification(`Task updated to ${newStatus}`, 'success');
+        }
+
+        function updateLabProgress(labName) {
+            const progress = demoProgressData[labName];
+            if (!progress) return;
+
+            let totalTasks = 0;
+            let completedTasks = 0;
+
+            progress.phases.forEach(phase => {
+                let phaseTasks = 0;
+                let phaseCompleted = 0;
+
+                phase.components.forEach(component => {
+                    component.tasks.forEach(task => {
+                        phaseTasks++;
+                        totalTasks++;
+                        if (task.status === 'Completed') {
+                            phaseCompleted++;
+                            completedTasks++;
+                        }
+                    });
+                });
+
+                phase.progress = phaseTasks > 0 ? Math.round((phaseCompleted / phaseTasks) * 100) : 0;
+            });
+
+            // Update main lab data
+            const lab = labsData.find(l => l.name === labName);
+            if (lab) {
+                lab.progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+                lab.completed_tasks = completedTasks;
+                lab.total_tasks = totalTasks;
+                
+                if (lab.progress === 100) {
+                    lab.status = 'Completed';
+                } else if (lab.progress > 0) {
+                    lab.status = 'In Progress';
+                } else {
+                    lab.status = 'Not Started';
+                }
+            }
+        }
+
+        function addNewLab() {
+            const labName = document.getElementById('labName').value.trim();
+            const tutorialUrl = document.getElementById('tutorialUrl').value.trim();
+
+            if (!labName || !tutorialUrl) {
+                showNotification('Please enter both lab name and tutorial URL', 'error');
+                return;
+            }
+
+            // Check if lab already exists
+            if (labsData.some(lab => lab.name === labName)) {
+                showNotification('Lab with this name already exists', 'error');
+                return;
+            }
+
+            showNotification('Creating lab assessment... This may take a moment.', 'info');
+
+            // In a real implementation, this would call the Python script
+            // For demo, we'll add a template lab
+            const newLab = {
+                name: labName,
+                description: `Assessment for ${labName}`,
+                category: "General",
+                progress: 0,
+                status: "Not Started",
+                estimated_hours: 10,
+                actual_hours: 0,
+                completed_tasks: 0,
+                total_tasks: 10,
+                last_updated: new Date().toISOString()
+            };
+
+            labsData.push(newLab);
+            
+            // Add demo progress data
+            demoProgressData[labName] = {
+                phases: [
+                    {
+                        phase_name: "Phase 1: Planning",
+                        progress: 0,
+                        components: [
+                            {
+                                component_name: "Initial Setup",
+                                tasks: [
+                                    { task_id: "plan1", task_name: "Review tutorial", status: "Not Started" },
+                                    { task_id: "plan2", task_name: "Gather resources", status: "Not Started" }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            // Clear form
+            document.getElementById('labName').value = '';
+            document.getElementById('tutorialUrl').value = '';
+
+            // Update display
+            updateSummaryStats();
+            renderLabs();
+            
+            showNotification(`Lab "${labName}" created successfully!`, 'success');
+        }
+
+        function showNotification(message, type = 'success') {
+            const notifications = document.getElementById('notifications');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            notifications.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 4000);
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLabsData();
+        });
+
+        // Auto-refresh every 30 seconds (for real-time updates)
+        setInterval(loadLabsData, 30000);
+    </script>
+</body>
+</html>
