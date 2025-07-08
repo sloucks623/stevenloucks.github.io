@@ -52,7 +52,8 @@ EXISTING_LAB_REPOS = [
     "lab-soc-automation",
     "lab-active-directory-1.0", 
     "lab-active-directory-2.0",
-    "lab-detection-1.0"
+    "lab-detection-1.0",
+    "lab-soc-helpdesk"
     # Add future labs here
 ]
 
