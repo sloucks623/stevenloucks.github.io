@@ -697,6 +697,9 @@ window.LabStatusDashboard = LabStatusDashboard;
 }
 
 // Initialize dashboard when DOM is loaded
+// Make LabStatusDashboard available globally
+window.LabStatusDashboard = LabStatusDashboard;
+
 document.addEventListener('DOMContentLoaded', () => {
     // Only initialize if we're on a page with the dashboard containers
     if (document.getElementById('portfolio-dashboard-container') || 

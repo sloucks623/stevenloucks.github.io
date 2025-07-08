@@ -475,7 +475,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Event listeners
-  dashboardToggle.addEventListener('click', toggleDashboard);
   collapseButton.addEventListener('click', toggleDashboard);
   
   // Refresh dashboard
@@ -494,9 +493,39 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize dashboard immediately
   setTimeout(() => {
+    console.log('Checking for LabStatusDashboard...');
     if (window.LabStatusDashboard) {
+      console.log('Creating new LabStatusDashboard instance...');
       window.labDashboard = new LabStatusDashboard();
+      console.log('Dashboard initialized successfully');
+    } else {
+      console.log('LabStatusDashboard not found, retrying...');
+      setTimeout(() => {
+        if (window.LabStatusDashboard) {
+          window.labDashboard = new LabStatusDashboard();
+          console.log('Dashboard initialized on retry');
+        }
+      }, 500);
     }
   }, 100);
+  
+  // Also try to initialize when button is clicked for the first time
+  dashboardToggle.addEventListener('click', function() {
+    console.log('Dashboard button clicked');
+    // Make sure dashboard is initialized before showing
+    if (!window.labDashboard && window.LabStatusDashboard) {
+      console.log('Initializing dashboard on button click');
+      window.labDashboard = new LabStatusDashboard();
+    }
+    
+    // Force render the dashboard content
+    if (window.labDashboard) {
+      console.log('Forcing dashboard render');
+      window.labDashboard.renderDashboard();
+      window.labDashboard.renderLabWidgets();
+    }
+    
+    toggleDashboard();
+  });
 });
 </script>
