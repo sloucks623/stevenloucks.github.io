@@ -15,7 +15,7 @@ github:
   repository_url: https://github.com/sloucks623/stevenloucks.github.io
 
 # Force rebuild timestamp
-rebuilt_at: "2025-07-08T12:00:00Z"
+rebuilt_at: "2025-07-19T23:15:00Z"
 
 # Exclude files from processing
 exclude:
@@ -31,4 +31,8 @@ include:
   - assets
   - css
   - js
-  - data
+  - personal
+  - school
+  - labs
+  - vms
+  - important
